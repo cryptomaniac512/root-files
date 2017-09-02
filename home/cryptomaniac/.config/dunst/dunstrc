@@ -1,0 +1,48 @@
+[global]
+    font = "Droid Sans 10"
+    allow_markup = yes
+    format = "%a: %s %p\n%b"
+    sort = yes
+    indicate_hidden = yes
+    idle_threshold = 0
+    geometry = "300x5-20+30"
+    alignment = left
+    show_age_threshold = 60
+    sticky_history = yes
+    follow = mouse
+    word_wrap = yes
+    separator_height = 1
+    padding = 10
+    horizontal_padding = 10
+    separator_color = frame
+    startup_notification = false
+    show_indicators = yes
+    icon_position = left
+    dmenu = "/usr/bin/dmenu -p dunst: -i -nb '#2f333e' -nf '#d2dae3' -fn 'Droid Sans-9' -l 20
+    browser = /usr/bin/chromium
+
+
+[frame]
+    width = 1
+    color = "#5e81ac"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#2e3440"
+    foreground = "#d8dee9"
+    timeout = 3
+
+[urgency_normal]
+    background = "#2e3440"
+    foreground = "#d8dee9"
+    timeout = 5
+
+[urgency_critical]
+    background = "#d08770"
+    foreground = "#d8dee9"
+    timeout = 0
