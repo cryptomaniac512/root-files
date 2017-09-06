@@ -6,6 +6,7 @@
 alias ls='ls --color=auto'
 
 alias backoffice="cd ~/Devel/Projects/backoffice/src/ && source ~/Devel/Envs/py3_backoffice/bin/activate"
+alias cmblog="cd ~/Devel/Projects/cmblog/ && source ~/Devel/Envs/py3_cmblog/bin/activate"
 
 PS1='[\u@\h \W]\$ '
 
