@@ -16,3 +16,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+NPM_PACKAGES="$HOME/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
