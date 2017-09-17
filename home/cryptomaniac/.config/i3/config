@@ -190,13 +190,13 @@ bar {
 #############
 ### Autostart
 exec_always --no-startup-id $HOME/.config/i3/exec_always.sh
-exec --no-startup-id google-chrome-stable
+exec --no-startup-id chromium
 exec --no-startup-id flatpak run org.telegram.desktop
 exec --no-startup-id terminator -c "Scratchpad Terminator"
 
 
 ################################
 ### Predefined manipulations with windows
-assign [title="Chrome$"] 3
+assign [title="Chromium$"] 3
 assign [title="Telegram$"] 10
 for_window [instance="Scratchpad Terminator"] move scratchpad
