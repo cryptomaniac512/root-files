@@ -20,7 +20,6 @@ alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
 alias backoffice="cd ~/Devel/Projects/backoffice/src/ && source ~/Devel/Envs/py3_backoffice/bin/activate"
-alias cmblog="cd ~/Devel/Projects/cmblog/ && source ~/Devel/Envs/py3_cmblog/bin/activate"
 alias root-files="cd ~/Devel/Projects/root-files/"
 alias cryptomaniac512.github.io="cd ~/Devel/Projects/cryptomaniac512.github.io/ && source ~/Devel/Envs/py3_cryptomaniac512.github.io/bin/activate"
 
