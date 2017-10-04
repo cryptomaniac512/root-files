@@ -109,6 +109,7 @@ icon-next-foreground = ${colors.foreground-alt}
 
 label-song-maxlen = 30
 label-song-ellipsis = true
+label-song-foreground = ${colors.foreground-alt}
 
 bar-progress-indicator = |
 bar-progress-fill = —
