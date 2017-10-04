@@ -25,8 +25,8 @@ font-0 = Droid Sans:size=10;2
 font-1 = FontAwesome:size=10;2
 
 modules-left = i3 xwindow
-modules-center = 
-modules-right = xkeyboard xbacklight volume memory cpu battery0 battery1 temperature date
+modules-center =
+modules-right = mpd xkeyboard xbacklight volume memory cpu battery0 battery1 temperature date
 
 tray-position = right
 tray-padding = 2
@@ -91,16 +91,32 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+host = 127.0.0.1
+port = 6600
+password = 
 
-label-song-maxlen = 25
+format-online = <bar-progress>  <toggle>  <icon-next>  <label-song>
+format-online-prefix = " "
+format-online-prefix-foreground = ${colors.foreground-alt}
+
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-play-foreground = ${colors.foreground-alt}
+icon-pause-foreground = ${colors.foreground-alt}
+icon-next-foreground = ${colors.foreground-alt}
+
+label-song-maxlen = 30
 label-song-ellipsis = true
+
+bar-progress-indicator = |
+bar-progress-fill = —
+bar-progress-empty = —
+bar-progress-width = 10
+
+bar-progress-fill-foreground = ${colors.background-alt}
+bar-progress-empty-foreground = ${colors.foreground-alt}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -155,14 +171,14 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %A,  %Y-%m-%d"
+date = "%Y-%m-%d"
 
 time = " %H:%M"
 
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 
-label = %date% %time%
+label = "%date% %time% "
 
 [module/volume]
 type = internal/volume
