@@ -9,6 +9,7 @@ font pango:Droid Sans 11
 # border defaults
 new_float pixel 1
 new_window pixel 1
+smart_borders no_gaps
 
 # gaps
 gaps inner 10
