@@ -23,6 +23,7 @@ alias backoffice="cd ~/Devel/Projects/backoffice/src/ && source ~/Devel/Envs/py3
 alias root-files="cd ~/Devel/Projects/root-files/"
 alias cryptomaniac512.github.io="cd ~/Devel/Projects/cryptomaniac512.github.io/ && source ~/Devel/Envs/py3_cryptomaniac512.github.io/bin/activate"
 alias static-api-generator="cd ~/Devel/Projects/python-static-api-generator/ && source ~/Devel/Envs/py3_static_api_generator//bin/activate"
+alias markdown-full-yaml-metadata="cd ~/Devel/Projects/python-markdown-full-yaml-metadata/ && source ~/Devel/Envs/py3_markdown_full_yaml_metadata/bin/activate"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
