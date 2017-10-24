@@ -12,6 +12,10 @@ antigen bundle pyenv
 antigen bundle virtualenv
 antigen bundle yarn
 
+antigen bundle bil-elmoussaoui/flatpak-zsh-completion
+# stupid problem - this bundle does not loaded automatically
+source ~/.antigen/bundles/bil-elmoussaoui/flatpak-zsh-completion/flatpak/flatpak.plugin.zsh 
+
 antigen theme terminalparty
 
 antigen apply
