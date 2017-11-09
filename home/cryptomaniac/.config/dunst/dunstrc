@@ -1,5 +1,5 @@
 [global]
-    font = "Droid Sans 10"
+    font = "Roboto 10"
     allow_markup = yes
     format = "%a: %s %p\n%b"
     sort = yes
@@ -18,7 +18,7 @@
     startup_notification = false
     show_indicators = yes
     icon_position = left
-    dmenu = "/usr/bin/dmenu -p dunst: -i -nb '#2f333e' -nf '#d2dae3' -fn 'Droid Sans-9' -l 20
+    dmenu = "/usr/bin/dmenu -p dunst: -i -nb '#2f333e' -nf '#d2dae3' -fn 'Roboto-9' -l 20
     browser = /usr/bin/chromium
 
 

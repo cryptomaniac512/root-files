@@ -4,7 +4,7 @@ set $mod Mod4
 #############################
 ### Fonts, colors, appearance
 
-font pango:Droid Sans 11
+font pango:Roboto 11
 
 # border defaults
 new_float pixel 1
@@ -155,7 +155,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start i3-dmenu-desktop (a program launcher)
-bindsym $mod+p exec i3-dmenu-desktop --dmenu="dmenu -i -nb '#2f333e' -nf '#d2dae3' -fn 'Droid Sans-9' -l 20"
+bindsym $mod+p exec i3-dmenu-desktop --dmenu="dmenu -i -nb '#2f333e' -nf '#d2dae3' -fn 'Roboto-9' -l 20"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

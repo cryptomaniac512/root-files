@@ -4,7 +4,7 @@
 include "/home/cryptomaniac/.gtkrc-2.0.mine"
 gtk-theme-name="Arc-Dark"
 gtk-icon-theme-name="Papirus-Dark"
-gtk-font-name="Droid Sans 9"
+gtk-font-name="Roboto 9"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_TEXT
@@ -16,4 +16,4 @@ gtk-enable-input-feedback-sounds=0
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintslight"
-gtk-xft-rgba="rgb"
+gtk-xft-rgba="none"
