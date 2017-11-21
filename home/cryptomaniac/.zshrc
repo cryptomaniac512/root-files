@@ -43,3 +43,5 @@ PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 
 NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

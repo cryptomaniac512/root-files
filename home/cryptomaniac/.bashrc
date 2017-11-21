@@ -22,3 +22,5 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 
 PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 [ -f /home/cryptomaniac/.travis/travis.sh ] && source /home/cryptomaniac/.travis/travis.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
