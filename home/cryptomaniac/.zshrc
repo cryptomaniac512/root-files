@@ -23,10 +23,11 @@ antigen apply
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
+alias LanguageClient-neovim="cd ~/Devel/Projects/LanguageClient-neovim/ && source ~/Devel/Envs/py3_LanguageClient-neovim/bin/activate"
 alias backoffice="cd ~/Devel/Projects/backoffice/src/ && source ~/Devel/Envs/py3_backoffice/bin/activate"
 alias blog-api="cd ~/Devel/Projects/blog-api/ && source ~/Devel/Envs/py3_blog_api/bin/activate"
 alias cryptomaniac512.github.io="cd ~/Devel/Projects/cryptomaniac512.github.io/"
-alias insta="cd ~/Devel/Projects/insta/insta/ && source ~/Devel/Envs/py3_insta/bin/activate"
+alias insta="cd ~/Devel/Projects/insta/ && source ~/Devel/Envs/py3_insta/bin/activate"
 alias markdown-full-yaml-metadata="cd ~/Devel/Projects/python-markdown-full-yaml-metadata/ && source ~/Devel/Envs/py3_markdown_full_yaml_metadata/bin/activate"
 alias md-loader="cd ~/Devel/Projects/python-static-api-generator-md-loader/ && source ~/Devel/Envs/py3_static_api_generator_md_loader/bin/activate"
 alias root-files="cd ~/Devel/Projects/root-files/"
