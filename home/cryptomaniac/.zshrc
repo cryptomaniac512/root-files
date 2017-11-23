@@ -23,7 +23,6 @@ antigen apply
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
-alias LanguageClient-neovim="cd ~/Devel/Projects/LanguageClient-neovim/ && source ~/Devel/Envs/py3_LanguageClient-neovim/bin/activate"
 alias backoffice="cd ~/Devel/Projects/backoffice/src/ && source ~/Devel/Envs/py3_backoffice/bin/activate"
 alias blog-api="cd ~/Devel/Projects/blog-api/ && source ~/Devel/Envs/py3_blog_api/bin/activate"
 alias cryptomaniac512.github.io="cd ~/Devel/Projects/cryptomaniac512.github.io/"
