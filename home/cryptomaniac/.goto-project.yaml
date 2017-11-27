@@ -1,0 +1,43 @@
+backoffice:
+  path: ~/Devel/Projects/backoffice/src/
+  instructions:
+    - source ~/Devel/Envs/py3_backoffice/bin/activate
+
+blog-api:
+  path: ~/Devel/Projects/blog-api/
+  instructions:
+    - source ~/Devel/Envs/py3_blog_api/bin/activate
+
+cryptomaniac512.github.io:
+  path: ~/Devel/Projects/cryptomaniac512.github.io/
+
+goto-project:
+  path: ~/Devel/Projects/goto-project/
+  instructions:
+    - source ~/Devel/Envs/py3_goto-project/bin/activate
+
+insta:
+  path: ~/Devel/Projects/insta/
+  instructions:
+    - source ~/Devel/Envs/py3_insta/bin/activate
+
+markdown-full-yaml-metadata:
+  path: ~/Devel/Projects/python-markdown-full-yaml-metadata/
+  instructions:
+    - source ~/Devel/Envs/py3_markdown_full_yaml_metadata/bin/activate
+
+md-loader:
+  path: ~/Devel/Projects/python-static-api-generator-md-loader/
+  instructions:
+    - source ~/Devel/Envs/py3_static_api_generator_md_loader/bin/activate
+
+root-files:
+  path: ~/Devel/Projects/root-files/
+
+static-api-generator:
+  path: ~/Devel/Projects/python-static-api-generator/
+  instructions:
+    - source ~/Devel/Envs/py3_static_api_generator//bin/activate
+
+nvim:
+  path: ~/.config/nvim/
