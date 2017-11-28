@@ -24,17 +24,4 @@ antigen apply
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init -)"
-
-export PATH="$HOME/.local/bin:$PATH"
-
-PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-[ -f /home/cryptomaniac/.travis/travis.sh ] && source /home/cryptomaniac/.travis/travis.sh
-
-NPM_PACKAGES="$HOME/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
