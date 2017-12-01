@@ -41,3 +41,6 @@ static-api-generator:
 
 nvim:
   path: ~/.config/nvim/
+
+learn-rust:
+  path: ~/Devel/Projects/learn_rust/
