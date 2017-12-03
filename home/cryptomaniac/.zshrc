@@ -26,4 +26,7 @@ antigen apply
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
+alias crun="cargo run"
+alias cnew="cargo new"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
