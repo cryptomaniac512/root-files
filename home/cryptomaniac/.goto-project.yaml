@@ -37,10 +37,15 @@ root-files:
 static-api-generator:
   path: ~/Devel/Projects/python-static-api-generator/
   instructions:
-    - source ~/Devel/Envs/py3_static_api_generator//bin/activate
+    - source ~/Devel/Envs/py3_static_api_generator/bin/activate
 
 nvim:
   path: ~/.config/nvim/
 
 learn-rust:
   path: ~/Devel/Projects/learn_rust/
+
+test-task-ivelum:
+  path: ~/Devel/Projects/test_task_ivelum/
+  instructions:
+    - source ~/Devel/Envs/py3_test_task_ivelum/bin/activate
