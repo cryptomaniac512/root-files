@@ -49,3 +49,8 @@ test-task-ivelum:
   path: ~/Devel/Projects/test_task_ivelum/
   instructions:
     - source ~/Devel/Envs/py3_test_task_ivelum/bin/activate
+ 
+test-task-ivelum-train-tickets:
+  path: ~/Devel/Projects/test_task_ivelum_train_tickets
+  instructions:
+    - source ~/Devel/Envs/py3_test_task_ivelum_train_tickets/bin/activate
