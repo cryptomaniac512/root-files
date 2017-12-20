@@ -54,3 +54,8 @@ yandex-geocoder:
   path: ~/Devel/Projects/yandex-geocoder
   instructions:
     - source ~/Devel/Envs/py3_yandex-geocoder/bin/activate
+
+yafas:
+  path: ~/Devel/Projects/yafas
+  instructions:
+    - source ~/Devel/Envs/py3_yafas/bin/activate
