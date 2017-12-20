@@ -50,7 +50,7 @@ test-task-ivelum:
   instructions:
     - source ~/Devel/Envs/py3_test_task_ivelum/bin/activate
  
-test-task-ivelum-train-tickets:
-  path: ~/Devel/Projects/test_task_ivelum_train_tickets
+yandex-geocoder:
+  path: ~/Devel/Projects/yandex-geocoder
   instructions:
-    - source ~/Devel/Envs/py3_test_task_ivelum_train_tickets/bin/activate
+    - source ~/Devel/Envs/py3_yandex-geocoder/bin/activate
