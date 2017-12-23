@@ -54,3 +54,8 @@ yafas:
   path: ~/Devel/Projects/yafas
   instructions:
     - source ~/Devel/Envs/py3_yafas/bin/activate
+
+try-flask-restful:
+  path: ~/Devel/Projects/try-flask-restful
+  instructions:
+    - source ~/Devel/Envs/py3_try-flask-restful/bin/activate
