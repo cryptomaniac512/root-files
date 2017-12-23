@@ -45,11 +45,6 @@ nvim:
 learn-rust:
   path: ~/Devel/Projects/learn_rust/
 
-test-task-ivelum:
-  path: ~/Devel/Projects/test_task_ivelum/
-  instructions:
-    - source ~/Devel/Envs/py3_test_task_ivelum/bin/activate
- 
 yandex-geocoder:
   path: ~/Devel/Projects/yandex-geocoder
   instructions:
