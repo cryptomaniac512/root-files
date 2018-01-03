@@ -59,3 +59,5 @@ try-flask-restful:
   path: ~/Devel/Projects/try-flask-restful
   instructions:
     - source ~/Devel/Envs/py3_try-flask-restful/bin/activate
+    - export FLASK_APP=app.py
+    - export FLASK_DEBUG=1
