@@ -50,14 +50,32 @@ yandex-geocoder:
   instructions:
     - source ~/Devel/Envs/py3_yandex-geocoder/bin/activate
 
-yafas:
-  path: ~/Devel/Projects/yafas
-  instructions:
-    - source ~/Devel/Envs/py3_yafas/bin/activate
-
 try-flask-restful:
   path: ~/Devel/Projects/try-flask-restful
   instructions:
     - source ~/Devel/Envs/py3_try-flask-restful/bin/activate
     - export FLASK_APP=app.py
     - export FLASK_DEBUG=1
+
+dotenv-config:
+  path: ~/Devel/Projects/dotenv-config
+  instructions:
+    - source ~/Devel/Envs/py3_dotenv-config/bin/activate
+
+yafas-server:
+  path: ~/Devel/Projects/yafas-server
+  instructions:
+    - source ~/Devel/Envs/py3_yafas-server/bin/activate
+    - export FLASK_APP=app.py
+    - export FLASK_DEBUG=1
+
+yafas-website:
+  path: ~/Devel/Projects/yafas-website
+
+yafas-infrastructure:
+  path: ~/Devel/Projects/yafas-infrastructure
+
+build-trigger:
+  path: ~/Devel/Projects/build-trigger
+  instructions:
+    - source ~/Devel/Envs/py3_build-trigger/bin/activate
