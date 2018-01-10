@@ -79,3 +79,5 @@ build-trigger:
   path: ~/Devel/Projects/build-trigger
   instructions:
     - source ~/Devel/Envs/py3_build-trigger/bin/activate
+    - export FLASK_APP=app.py
+    - export FLASK_DEBUG=1
