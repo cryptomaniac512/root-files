@@ -84,8 +84,22 @@ build-trigger:
 
 yafas-web:
   path: ~/Devel/Projects/yafas-web
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
 
 bn2-backend:
   path: ~/Devel/Projects/bn2-backend/src/
   instructions:
     - source ~/Devel/Envs/py3_bn2-backend/bin/activate
+
+learn_typescript:
+  path: ~/Devel/Projects/learn_typescript
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
+
+roistat-aggregator:
+  path: ~/Devel/Projects/roistat-aggregator
+  instructions:
+    - source ~/Devel/Envs/py3_roistat-aggregator/bin/activate
+    - export FLASK_APP=app.py
+    - export FLASK_DEBUG=1
