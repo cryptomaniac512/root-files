@@ -103,3 +103,8 @@ roistat-aggregator:
     - source ~/Devel/Envs/py3_roistat-aggregator/bin/activate
     - export FLASK_APP=app.py
     - export FLASK_DEBUG=1
+
+try-falcon:
+  path: ~/Devel/Projects/try-falcon
+  instructions:
+    - source ~/Devel/Envs/py3_try-falcon/bin/activate
