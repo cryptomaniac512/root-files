@@ -109,7 +109,7 @@ try-falcon:
   instructions:
     - source ~/Devel/Envs/py3_try-falcon/bin/activate
 
-pytest-falcon-fixtures:
-  path: ~/Devel/Projects/pytest-falcon-fixtures
+pytest-falcon-client:
+  path: ~/Devel/Projects/pytest-falcon-client/
   instructions:
-    - source ~/Devel/Envs/py3_pytest-falcon-fixtures/bin/activate
+    - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
