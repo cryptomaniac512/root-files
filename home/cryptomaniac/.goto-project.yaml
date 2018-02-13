@@ -66,8 +66,6 @@ yafas-server:
   path: ~/Devel/Projects/yafas-server
   instructions:
     - source ~/Devel/Envs/py3_yafas-server/bin/activate
-    - export FLASK_APP=app.py
-    - export FLASK_DEBUG=1
 
 yafas-website:
   path: ~/Devel/Projects/yafas-website
@@ -113,3 +111,13 @@ pytest-falcon-client:
   path: ~/Devel/Projects/pytest-falcon-client/
   instructions:
     - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
+
+backoffice-client:
+  path: ~/Devel/Projects/backoffice-client/
+  instructions:
+    - source ~/Devel/Envs/py3_backoffice-client/bin/activate
+
+flask-sqlalchemy:
+  path: ~/Devel/Projects/flask-sqlalchemy
+  instructions:
+    - source ~/Devel/Envs/py3_flask-sqlalchemy/bin/activate
