@@ -90,6 +90,9 @@ bn2-backend:
   instructions:
     - source ~/Devel/Envs/py3_bn2-backend/bin/activate
 
+bn2-frontend:
+  path: ~/Devel/Projects/bn2-frontend/
+
 learn_typescript:
   path: ~/Devel/Projects/learn_typescript
   instructions:
@@ -121,3 +124,8 @@ flask-sqlalchemy:
   path: ~/Devel/Projects/flask-sqlalchemy
   instructions:
     - source ~/Devel/Envs/py3_flask-sqlalchemy/bin/activate
+
+learn-elm:
+  path: ~/Devel/Projects/learn-elm
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
