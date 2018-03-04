@@ -129,3 +129,8 @@ learn-elm:
   path: ~/Devel/Projects/learn-elm
   instructions:
     - PATH="node_modules/.bin:$PATH"
+
+try-elm:
+  path: ~/Devel/Projects/try-elm
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
