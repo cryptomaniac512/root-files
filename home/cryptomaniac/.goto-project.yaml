@@ -3,13 +3,30 @@ backoffice:
   instructions:
     - source ~/Devel/Envs/py3_backoffice/bin/activate
 
-blog-api:
-  path: ~/Devel/Projects/blog-api/
+backoffice-client:
+  path: ~/Devel/Projects/backoffice-client/
   instructions:
-    - source ~/Devel/Envs/py3_blog_api/bin/activate
+    - source ~/Devel/Envs/py3_backoffice-client/bin/activate
 
-cryptomaniac512.github.io:
-  path: ~/Devel/Projects/cryptomaniac512.github.io/
+bn2-backend:
+  path: ~/Devel/Projects/bn2-backend/src/
+  instructions:
+    - source ~/Devel/Envs/py3_bn2-backend/bin/activate
+
+bn2-frontend:
+  path: ~/Devel/Projects/bn2-frontend/
+
+build-trigger:
+  path: ~/Devel/Projects/build-trigger
+  instructions:
+    - source ~/Devel/Envs/py3_build-trigger/bin/activate
+    - export FLASK_APP=app.py
+    - export FLASK_DEBUG=1
+
+dotenv-config:
+  path: ~/Devel/Projects/dotenv-config
+  instructions:
+    - source ~/Devel/Envs/py3_dotenv-config/bin/activate
 
 goto-project:
   path: ~/Devel/Projects/goto-project/
@@ -21,82 +38,13 @@ insta:
   instructions:
     - source ~/Devel/Envs/py3_insta/bin/activate
 
-markdown-full-yaml-metadata:
-  path: ~/Devel/Projects/python-markdown-full-yaml-metadata/
-  instructions:
-    - source ~/Devel/Envs/py3_markdown_full_yaml_metadata/bin/activate
-
-md-loader:
-  path: ~/Devel/Projects/python-static-api-generator-md-loader/
-  instructions:
-    - source ~/Devel/Envs/py3_static_api_generator_md_loader/bin/activate
-
-root-files:
-  path: ~/Devel/Projects/root-files/
-
-static-api-generator:
-  path: ~/Devel/Projects/python-static-api-generator/
-  instructions:
-    - source ~/Devel/Envs/py3_static_api_generator/bin/activate
-
 nvim:
   path: ~/.config/nvim/
 
-learn-rust:
-  path: ~/Devel/Projects/learn_rust/
-
-yandex-geocoder:
-  path: ~/Devel/Projects/yandex-geocoder
+pytest-falcon-client:
+  path: ~/Devel/Projects/pytest-falcon-client/
   instructions:
-    - source ~/Devel/Envs/py3_yandex-geocoder/bin/activate
-
-try-flask-restful:
-  path: ~/Devel/Projects/try-flask-restful
-  instructions:
-    - source ~/Devel/Envs/py3_try-flask-restful/bin/activate
-    - export FLASK_APP=app.py
-    - export FLASK_DEBUG=1
-
-dotenv-config:
-  path: ~/Devel/Projects/dotenv-config
-  instructions:
-    - source ~/Devel/Envs/py3_dotenv-config/bin/activate
-
-yafas-server:
-  path: ~/Devel/Projects/yafas-server
-  instructions:
-    - source ~/Devel/Envs/py3_yafas-server/bin/activate
-
-yafas-website:
-  path: ~/Devel/Projects/yafas-website
-
-yafas-infrastructure:
-  path: ~/Devel/Projects/yafas-infrastructure
-
-build-trigger:
-  path: ~/Devel/Projects/build-trigger
-  instructions:
-    - source ~/Devel/Envs/py3_build-trigger/bin/activate
-    - export FLASK_APP=app.py
-    - export FLASK_DEBUG=1
-
-yafas-web:
-  path: ~/Devel/Projects/yafas-web
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
-
-bn2-backend:
-  path: ~/Devel/Projects/bn2-backend/src/
-  instructions:
-    - source ~/Devel/Envs/py3_bn2-backend/bin/activate
-
-bn2-frontend:
-  path: ~/Devel/Projects/bn2-frontend/
-
-learn_typescript:
-  path: ~/Devel/Projects/learn_typescript
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
+    - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
 
 roistat-aggregator:
   path: ~/Devel/Projects/roistat-aggregator
@@ -105,32 +53,21 @@ roistat-aggregator:
     - export FLASK_APP=app.py
     - export FLASK_DEBUG=1
 
-try-falcon:
-  path: ~/Devel/Projects/try-falcon
-  instructions:
-    - source ~/Devel/Envs/py3_try-falcon/bin/activate
+root-files:
+  path: ~/Devel/Projects/root-files/
 
-pytest-falcon-client:
-  path: ~/Devel/Projects/pytest-falcon-client/
-  instructions:
-    - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
+yafas-infrastructure:
+  path: ~/Devel/Projects/yafas-infrastructure
 
-backoffice-client:
-  path: ~/Devel/Projects/backoffice-client/
+yafas-server:
+  path: ~/Devel/Projects/yafas-server
   instructions:
-    - source ~/Devel/Envs/py3_backoffice-client/bin/activate
+    - source ~/Devel/Envs/py3_yafas-server/bin/activate
 
-flask-sqlalchemy:
-  path: ~/Devel/Projects/flask-sqlalchemy
-  instructions:
-    - source ~/Devel/Envs/py3_flask-sqlalchemy/bin/activate
-
-learn-elm:
-  path: ~/Devel/Projects/learn-elm
+yafas-web:
+  path: ~/Devel/Projects/yafas-web
   instructions:
     - PATH="node_modules/.bin:$PATH"
 
-try-elm:
-  path: ~/Devel/Projects/try-elm
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
+yafas-website:
+  path: ~/Devel/Projects/yafas-website
