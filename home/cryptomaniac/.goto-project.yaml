@@ -8,6 +8,11 @@ backoffice-client:
   instructions:
     - source ~/Devel/Envs/py3_backoffice-client/bin/activate
 
+backoffice-frontend:
+  path: ~/Devel/Projects/backoffice-frontend
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
+
 bn2-backend:
   path: ~/Devel/Projects/bn2-backend/src/
   instructions:
