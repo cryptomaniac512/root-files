@@ -69,6 +69,11 @@ yafas-server:
   instructions:
     - source ~/Devel/Envs/py3_yafas-server/bin/activate
 
+yafas-web-DEPRECATED:
+  path: ~/Devel/Projects/yafas-web-DEPRECATED
+  instructions:
+    - PATH="node_modules/.bin:$PATH"
+
 yafas-web:
   path: ~/Devel/Projects/yafas-web
   instructions:
