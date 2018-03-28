@@ -182,10 +182,10 @@ bindsym --release Control+Print exec scrot -s -e 'xclip -selection clipboard -ta
 
 ##############
 ### Status bar
-bar {
-	mode invisible
-        tray_output none
-}
+# bar {
+# 	mode invisible
+#         tray_output none
+# }
 
 
 #############
