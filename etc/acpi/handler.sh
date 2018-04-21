@@ -23,10 +23,9 @@ done
 
 case "$1" in
     button/power)
-        #echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
-		    logger "PowerButton pressed: $2, shutting down..."
+		    logger "PowerButton pressed: $2, hibernating..."
 		    ZZZ
 		    ;;
             *)      logger "ACPI action undefined: $2" ;;
