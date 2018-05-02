@@ -79,10 +79,5 @@ yafas-web:
   instructions:
     - PATH="node_modules/.bin:$PATH"
 
-yafas-web-elm:
-  path: ~/Devel/Projects/yafas-web-elm
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
-
 yafas-website:
   path: ~/Devel/Projects/yafas-website
