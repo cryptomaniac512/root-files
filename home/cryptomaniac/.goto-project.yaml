@@ -43,9 +43,6 @@ insta:
   instructions:
     - source ~/Devel/Envs/py3_insta/bin/activate
 
-nvim:
-  path: ~/.config/nvim/
-
 pytest-falcon-client:
   path: ~/Devel/Projects/pytest-falcon-client/
   instructions:
@@ -60,6 +57,9 @@ roistat-aggregator:
 
 root-files:
   path: ~/Devel/Projects/root-files/
+
+vimrc:
+  path: ~/Devel/Projects/vimrc
 
 yafas-infrastructure:
   path: ~/Devel/Projects/yafas-infrastructure
