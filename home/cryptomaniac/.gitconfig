@@ -1,6 +1,6 @@
 [user]
-	email = cryptomaniac.512@gmail.com
-	name = Nikita "CryptoManiac" Sivakov
+	email = sivakov512@gmail.com
+	name = Nikita Sivakov
 [core]
-	excludesfile = /home/cryptomaniac/.gitignore_global
+	excludesfile = /home/sivakov512/.gitignore_global
 	editor = vim
