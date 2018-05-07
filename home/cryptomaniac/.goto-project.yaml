@@ -44,6 +44,11 @@ insta:
     - source ~/Devel/Envs/py3_insta/bin/activate
     - export FLASK_APP=insta/app.py
 
+panorama-dv:
+  path: ~/Devel/Projects/panorama_dv
+  instructions:
+    - source ~/Devel/Envs/py3_panorama_dv/bin/activate
+
 pytest-falcon-client:
   path: ~/Devel/Projects/pytest-falcon-client/
   instructions:
