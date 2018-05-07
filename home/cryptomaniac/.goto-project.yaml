@@ -42,6 +42,7 @@ insta:
   path: ~/Devel/Projects/insta/
   instructions:
     - source ~/Devel/Envs/py3_insta/bin/activate
+    - export FLASK_APP=insta/app.py
 
 pytest-falcon-client:
   path: ~/Devel/Projects/pytest-falcon-client/
