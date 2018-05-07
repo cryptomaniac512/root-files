@@ -6,7 +6,7 @@ eval "$(pyenv init -)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 [ -f /home/cryptomaniac/.travis/travis.sh ] && source /home/cryptomaniac/.travis/travis.sh
 
 NPM_PACKAGES="$HOME/.npm-packages"
