@@ -44,6 +44,9 @@ insta:
     - source ~/Devel/Envs/py3_insta/bin/activate
     - export FLASK_APP=insta/app.py
 
+learn-rust-by-tutorial:
+  path: ~/Devel/Projects/learn-rust-by-tutorial
+
 panoramadv-infrastructure:
   path: ~/Devel/Projects/panoramadv-infrastructure
 
