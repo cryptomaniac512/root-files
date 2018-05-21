@@ -176,7 +176,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym --release Print exec scrot -e 'mv $f ~/Images/Screenshots/'
 bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Images/Screenshots/'
-bindsym --release Control+Print exec scrot -s -e 'xclip -selection clipboard -target image/png $f && rm $f'
+bindsym --release Control+Print exec flameshot gui
 # bindsym --release Mod1+Print exec scrot -s -e 'xclip -selection clipboard -target image/png $f && rm $f'
 
 
