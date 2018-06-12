@@ -28,6 +28,11 @@ build-trigger:
     - export FLASK_APP=app.py
     - export FLASK_DEBUG=1
 
+dadata-client:
+  path: ~/Devel/Projects/dadata-client
+  instructions:
+    - source ~/Devel/Envs/py3_dadata-client/bin/activate
+
 dotenv-config:
   path: ~/Devel/Projects/dotenv-config
   instructions:
