@@ -38,10 +38,8 @@ dotenv-config:
   instructions:
     - source ~/Devel/Envs/py3_dotenv-config/bin/activate
 
-goto-project:
-  path: ~/Devel/Projects/goto-project/
-  instructions:
-    - source ~/Devel/Envs/py3_goto-project/bin/activate
+goto_project:
+  path: ~/Devel/Projects/goto_project/
 
 insta:
   path: ~/Devel/Projects/insta/
@@ -59,6 +57,11 @@ panoramadv-website:
   path: ~/Devel/Projects/panorama_dv
   instructions:
     - source ~/Devel/Envs/py3_panorama_dv/bin/activate
+
+py_goto_project:
+  path: ~/Devel/Projects/py_goto_project/
+  instructions:
+    - source ~/Devel/Envs/py3_goto-project/bin/activate
 
 pytest-falcon-client:
   path: ~/Devel/Projects/pytest-falcon-client/
