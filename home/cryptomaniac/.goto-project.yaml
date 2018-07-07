@@ -68,6 +68,11 @@ pytest-falcon-client:
   instructions:
     - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
 
+kindergarden:
+  path: ~/Devel/Projects/kindergarden
+  instructions:
+    - source ~/Devel/Envs/py3_kindergarden/bin/activate
+
 roistat-aggregator:
   path: ~/Devel/Projects/roistat-aggregator
   instructions:
