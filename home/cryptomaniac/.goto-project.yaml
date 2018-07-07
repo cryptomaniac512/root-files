@@ -33,6 +33,9 @@ dadata-client:
   instructions:
     - source ~/Devel/Envs/py3_dadata-client/bin/activate
 
+diesel:
+  path: ~/Devel/Projects/diesel
+
 dotenv-config:
   path: ~/Devel/Projects/dotenv-config
   instructions:
