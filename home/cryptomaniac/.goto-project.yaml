@@ -41,8 +41,8 @@ dotenv-config:
   instructions:
     - source ~/Devel/Envs/py3_dotenv-config/bin/activate
 
-goto_project:
-  path: ~/Devel/Projects/goto_project/
+goto-project-rs:
+  path: ~/Devel/Projects/goto-project-rs/
 
 insta:
   path: ~/Devel/Projects/insta/
