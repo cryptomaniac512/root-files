@@ -14,7 +14,7 @@ antigen bundle yarn
 antigen bundle cargo
 antigen bundle rust
 antigen bundle docker
-antigen bundle cryptomaniac512/goto-project completions/zsh
+antigen bundle sivakov512/goto-project-rs completions/zsh
 
 antigen bundle bil-elmoussaoui/flatpak-zsh-completion
 # stupid problem - this bundle does not loaded automatically
