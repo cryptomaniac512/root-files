@@ -201,3 +201,4 @@ exec --no-startup-id alacritty --title="Scratchpad terminal"
 assign [title="Chromium$"] 3
 assign [title="Telegram$"] 10
 for_window [title="Scratchpad terminal"] move scratchpad
+for_window [title="Scratchpad terminal"] border pixel 1
