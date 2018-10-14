@@ -30,12 +30,9 @@ modules-right = xkeyboard xbacklight volume memory cpu battery0 battery1 tempera
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
 tray-background = ${colors.background}
 
 wm-restack = i3
-
-;override-redirect = true
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -63,28 +60,21 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 2
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 2
 
-; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
-; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
@@ -106,11 +96,6 @@ bar-empty = —
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -128,7 +113,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
@@ -217,14 +202,12 @@ inherit = module/battery0
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
 warn-temperature = 80
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 
-label = %temperature%
-label-warn = %temperature%
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
@@ -240,10 +223,6 @@ ramp-4-foreground = ${colors.alert}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
