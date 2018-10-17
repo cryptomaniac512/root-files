@@ -1,5 +1,4 @@
 nitrogen --restore
-start-pulseaudio-x11 &
 redshift &
 
 dbus-launch
