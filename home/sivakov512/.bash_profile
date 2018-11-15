@@ -3,7 +3,7 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-export TERMINAL="alacritty"
+export WINIT_HIDPI_FACTOR=1.0
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
