@@ -4,3 +4,5 @@
 [core]
 	excludesfile = /home/sivakov512/.gitignore_global
 	editor = vim
+[includeIf "gitdir:~/Devel/Projects/yandex/"]
+	path = ~/Devel/Projects/yandex/.gitconfig
