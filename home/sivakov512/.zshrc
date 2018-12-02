@@ -20,6 +20,10 @@ antigen bundle bil-elmoussaoui/flatpak-zsh-completion
 # stupid problem - this bundle does not loaded automatically
 source ~/.antigen/bundles/bil-elmoussaoui/flatpak-zsh-completion/flatpak/flatpak.plugin.zsh 
 
+# fzf settings for zsh
+source /usr/share/doc/fzf/completion.zsh
+source /usr/share/doc/fzf/key-bindings.zsh
+
 antigen theme terminalparty
 
 antigen apply

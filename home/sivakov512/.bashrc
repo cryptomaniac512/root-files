@@ -11,4 +11,4 @@ alias l='ls -lsha --color=auto'
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/doc/fzf/key-bindings.bash
