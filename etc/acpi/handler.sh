@@ -38,7 +38,10 @@ case "$1" in
 		    logger "Sleep Button pressed: $2, suspending..."
 		    zzz
 		    ;;
-            *)      logger "ACPI action undefined: $2" ;;
+            *)     
+		    logger "ACPI action undefined: $2"
+		    sv restart NetworkManager
+		    ;;
         esac
         ;;
     ac_adapter)
@@ -80,7 +83,10 @@ case "$1" in
 			logger "LID closed, suspending..."
 			zzz
 			;;
-		open)	logger "LID opened" ;;
+		open)
+			logger "LID opened"
+			sv restart NetworkManager
+			;;
 		*) logger "ACPI action undefined (LID): $2";;
 	esac
 	;;
