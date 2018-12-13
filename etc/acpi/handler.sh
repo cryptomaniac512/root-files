@@ -25,24 +25,24 @@ case "$1" in
     button/power)
         case "$2" in
             PBTN|PWRF)
-		    logger "PowerButton pressed: $2, hibernating..."
-		    ZZZ
-		    ;;
+            logger "PowerButton pressed: $2, hibernating..."
+            ZZZ
+            ;;
             *)      logger "ACPI action undefined: $2" ;;
         esac
         ;;
     button/sleep)
         case "$2" in
             SBTN|SLPB)
-		    # suspend-to-ram
-		    logger "Sleep Button pressed: $2, suspending..."
-		    zzz
-		    ;;
+            # suspend-to-ram
+            logger "Sleep Button pressed: $2, suspending..."
+            zzz
+            ;;
             *)     
-		    logger "ACPI action undefined: $2"
+            logger "ACPI action undefined: $2"
             modprobe -r r8169
             modprobe r8169
-		    ;;
+            ;;
         esac
         ;;
     ac_adapter)
@@ -78,20 +78,20 @@ case "$1" in
         esac
         ;;
     button/lid)
-	case "$3" in
-		close)
-			# suspend-to-ram
-			logger "LID closed, suspending..."
-			zzz
-			;;
-		open)
-			logger "LID opened"
+    case "$3" in
+        close)
+            # suspend-to-ram
+            logger "LID closed, suspending..."
+            zzz
+            ;;
+        open)
+            logger "LID opened"
             modprobe -r r8169
             modprobe r8169
-			;;
-		*) logger "ACPI action undefined (LID): $2";;
-	esac
-	;;
+            ;;
+        *) logger "ACPI action undefined (LID): $2";;
+    esac
+    ;;
     *)
         logger "ACPI group/action undefined: $1 / $2"
         ;;
