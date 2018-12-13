@@ -40,7 +40,8 @@ case "$1" in
 		    ;;
             *)     
 		    logger "ACPI action undefined: $2"
-		    sv restart NetworkManager
+            modprobe -r r8169
+            modprobe r8169
 		    ;;
         esac
         ;;
@@ -85,7 +86,8 @@ case "$1" in
 			;;
 		open)
 			logger "LID opened"
-			sv restart NetworkManager
+            modprobe -r r8169
+            modprobe r8169
 			;;
 		*) logger "ACPI action undefined (LID): $2";;
 	esac
