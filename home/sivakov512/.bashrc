@@ -12,3 +12,5 @@ alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
 source /usr/share/doc/fzf/key-bindings.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
