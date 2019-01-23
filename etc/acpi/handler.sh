@@ -28,7 +28,10 @@ case "$1" in
             logger "PowerButton pressed: $2, hibernating..."
             ZZZ
             ;;
-            *)      logger "ACPI action undefined: $2" ;;
+            *)
+	    logger "ACPI action undefined: $2"
+            sv restart NetworkManager
+	    ;;
         esac
         ;;
     button/sleep)
@@ -40,8 +43,7 @@ case "$1" in
             ;;
             *)     
             logger "ACPI action undefined: $2"
-            modprobe -r r8169
-            modprobe r8169
+            sv restart NetworkManager
             ;;
         esac
         ;;
@@ -86,8 +88,7 @@ case "$1" in
             ;;
         open)
             logger "LID opened"
-            modprobe -r r8169
-            modprobe r8169
+            sv restart NetworkManager
             ;;
         *) logger "ACPI action undefined (LID): $2";;
     esac
