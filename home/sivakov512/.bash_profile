@@ -8,10 +8,6 @@ export WINIT_HIDPI_FACTOR=1.0
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 export PATH="$HOME/.local/bin:$PATH"
 
 PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
