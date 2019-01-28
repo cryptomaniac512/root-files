@@ -10,8 +10,6 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-[ -f /home/cryptomaniac/.travis/travis.sh ] && source /home/cryptomaniac/.travis/travis.sh
 
 NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"

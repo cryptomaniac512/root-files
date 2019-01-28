@@ -6,9 +6,6 @@ export PATH="$(rustc --print sysroot)/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-[ -f /home/cryptomaniac/.travis/travis.sh ] && source /home/cryptomaniac/.travis/travis.sh
-export GEM_HOME=$HOME/.gem
 PATH="$GEM_HOME/bin:$PATH"
 
 NPM_PACKAGES="$HOME/.npm-packages"
