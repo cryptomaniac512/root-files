@@ -4,7 +4,7 @@ set $mod Mod4
 #############################
 ### Fonts, colors, appearance
 
-font pango:Roboto 11
+font pango:Roboto 9
 
 # border defaults
 new_float pixel 1
