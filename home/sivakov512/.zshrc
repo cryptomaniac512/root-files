@@ -26,4 +26,6 @@ antigen apply
 alias dev="cd ~/Devel/"
 alias dev-projects="cd ~/Devel/Projects/"
 
+alias pip-user-update="pip freeze --user | cut -d'=' -f1 | xargs pip install --user -U"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
