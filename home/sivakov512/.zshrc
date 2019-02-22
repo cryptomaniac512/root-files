@@ -11,8 +11,6 @@ antigen bundle rust
 antigen bundle docker
 antigen bundle sivakov512/goto-project-rs completions/zsh
 
-antigen bundle bil-elmoussaoui/flatpak-zsh-completion
-
 # fzf settings for zsh
 source /usr/share/doc/fzf/completion.zsh
 source /usr/share/doc/fzf/key-bindings.zsh
