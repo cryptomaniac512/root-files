@@ -4,10 +4,8 @@ source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle django
-antigen bundle npm
 antigen bundle pip
 antigen bundle virtualenv
-antigen bundle yarn
 antigen bundle cargo
 antigen bundle rust
 antigen bundle docker
