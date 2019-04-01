@@ -10,7 +10,7 @@
     idle_threshold = 0
     font = Roboto 9
     markup = full
-    format = "%a: %s\n%p\n%b"
+    format = "%a: %s %p\n%b"
     alignment = left
     show_age_threshold = 60
     word_wrap = yes
