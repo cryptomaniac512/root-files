@@ -3,7 +3,6 @@ source ~/.antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen bundle django
 antigen bundle pip
 antigen bundle virtualenv
 antigen bundle cargo
