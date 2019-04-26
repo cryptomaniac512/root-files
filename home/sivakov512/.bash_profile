@@ -1,6 +1,7 @@
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
 export WINIT_HIDPI_FACTOR=1.0
+export EDITOR=vim
 
 export PATH="$HOME/.cargo/bin:$(rustc --print sysroot)/bin:$PATH"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
