@@ -27,6 +27,11 @@ root-files:
 .vim:
   path: ~/.vim/
 
+storeon-isorouter:
+  path: ~/Devel/Projects/main/storeon-isorouter/
+  instructions:
+    - export PATH="./node_modules/.bin:$PATH"
+
 yafas-web-ui:
   path: ~/Devel/Projects/yafas/web-ui/
   instructions:
