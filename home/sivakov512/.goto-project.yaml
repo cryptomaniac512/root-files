@@ -1,111 +1,33 @@
-backoffice:
-  path: ~/Devel/Projects/backoffice/src/
-  instructions:
-    - source ~/Devel/Envs/py3_backoffice/bin/activate
-
-backoffice-client:
-  path: ~/Devel/Projects/backoffice-client/
-  instructions:
-    - source ~/Devel/Envs/py3_backoffice-client/bin/activate
-
-backoffice-frontend:
-  path: ~/Devel/Projects/backoffice-frontend
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
-
-bn2-backend:
-  path: ~/Devel/Projects/bn2-backend/src/
-  instructions:
-    - source ~/Devel/Envs/py3_bn2-backend/bin/activate
-
-bn2-frontend:
-  path: ~/Devel/Projects/bn2-frontend/
-
-build-trigger:
-  path: ~/Devel/Projects/build-trigger
-  instructions:
-    - source ~/Devel/Envs/py3_build-trigger/bin/activate
-    - export FLASK_APP=app.py
-    - export FLASK_DEBUG=1
-
-dadata-client:
-  path: ~/Devel/Projects/dadata-client
-  instructions:
-    - source ~/Devel/Envs/py3_dadata-client/bin/activate
-
-diesel:
-  path: ~/Devel/Projects/diesel
-
 dotenv-config:
-  path: ~/Devel/Projects/dotenv-config
+  path: ~/Devel/Projects/main/dotenv-config/
   instructions:
-    - source ~/Devel/Envs/py3_dotenv-config/bin/activate
+    - source ~/Devel/Envs/dotenv-config/bin/activate
 
-goto-project-rs:
-  path: ~/Devel/Projects/goto-project-rs/
-
-insta:
-  path: ~/Devel/Projects/insta/
+yandex-geocoder:
+  path: ~/Devel/Projects/main/yandex-geocoder/
   instructions:
-    - source ~/Devel/Envs/py3_insta/bin/activate
-    - export FLASK_APP=insta/app.py
+    - source ~/Devel/Envs/yandex-geocoder/bin/activate
 
-learn-rust-by-tutorial:
-  path: ~/Devel/Projects/learn-rust-by-tutorial
-
-panoramadv-infrastructure:
-  path: ~/Devel/Projects/panoramadv-infrastructure
-
-panoramadv-website:
-  path: ~/Devel/Projects/panorama_dv
+python-markdown-full-yaml-metadata:
+  path: ~/Devel/Projects/main/python-markdown-full-yaml-metadata/
   instructions:
-    - source ~/Devel/Envs/py3_panorama_dv/bin/activate
-
-py_goto_project:
-  path: ~/Devel/Projects/py_goto_project/
-  instructions:
-    - source ~/Devel/Envs/py3_goto-project/bin/activate
+    - source ~/Devel/Envs/python-markdown-full-yaml-metadata/bin/activate
 
 pytest-falcon-client:
-  path: ~/Devel/Projects/pytest-falcon-client/
+  path: ~/Devel/Projects/main/pytest-falcon-client/
   instructions:
-    - source ~/Devel/Envs/py3_pytest-falcon-client/bin/activate
+    - source ~/Devel/Envs/pytest-falcon-client/bin/activate
 
-kindergarden:
-  path: ~/Devel/Projects/kindergarden
-  instructions:
-    - source ~/Devel/Envs/py3_kindergarden/bin/activate
-
-roistat-aggregator:
-  path: ~/Devel/Projects/roistat-aggregator
-  instructions:
-    - source ~/Devel/Envs/py3_roistat-aggregator/bin/activate
-    - export FLASK_APP=app.py
-    - export FLASK_DEBUG=1
+goto-project-rs:
+  path: ~/Devel/Projects/main/goto-project-rs/
 
 root-files:
-  path: ~/Devel/Projects/root-files/
+  path: ~/Devel/Projects/main/root-files/
 
-vimrc:
-  path: ~/Devel/Projects/vimrc
+.vim:
+  path: ~/.vim/
 
-yafas-infrastructure:
-  path: ~/Devel/Projects/yafas-infrastructure
-
-yafas-server:
-  path: ~/Devel/Projects/yafas-server
+yafas-web-ui:
+  path: ~/Devel/Projects/yafas/web-ui/
   instructions:
-    - source ~/Devel/Envs/py3_yafas-server/bin/activate
-
-yafas-web-DEPRECATED:
-  path: ~/Devel/Projects/yafas-web-DEPRECATED
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
-
-yafas-web:
-  path: ~/Devel/Projects/yafas-web
-  instructions:
-    - PATH="node_modules/.bin:$PATH"
-
-yafas-website:
-  path: ~/Devel/Projects/yafas-website
+    - export PATH="./node_modules/.bin:$PATH"
