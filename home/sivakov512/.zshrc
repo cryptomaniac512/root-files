@@ -5,7 +5,6 @@ antigen use oh-my-zsh
 
 antigen bundle pip
 antigen bundle npm
-antigen bundle virtualenv
 antigen bundle cargo
 antigen bundle rust
 antigen bundle docker
@@ -25,3 +24,4 @@ alias dev-main="cd ~/Devel/Projects/main/"
 alias pip-user-update="pip freeze --user | cut -d'=' -f1 | xargs pip install --user -U"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
