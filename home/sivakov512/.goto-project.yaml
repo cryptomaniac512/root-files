@@ -36,3 +36,6 @@ yafas-web-ui:
   path: ~/Devel/Projects/yafas/web-ui/
   instructions:
     - export PATH="./node_modules/.bin:$PATH"
+
+yafas-auth-server:
+  path: ~/Devel/Projects/yafas/auth-server/
