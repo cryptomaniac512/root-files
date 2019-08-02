@@ -1,6 +1,6 @@
 nitrogen --restore
 redshift &
-blueman-applet &
+# blueman-applet &
 start-pulseaudio-x11
 
 dbus-launch
