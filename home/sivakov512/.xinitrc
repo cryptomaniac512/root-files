@@ -3,5 +3,4 @@ redshift &
 # blueman-applet &
 start-pulseaudio-x11
 
-dbus-launch
-exec ck-launch-session i3
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 i3
