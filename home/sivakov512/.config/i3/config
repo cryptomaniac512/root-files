@@ -181,6 +181,8 @@ bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Images/Screenshots/'
 bindsym --release Control+Print exec flameshot gui
 # bindsym --release Mod1+Print exec scrot -s -e 'xclip -selection clipboard -target image/png $f && rm $f'
 
+bindsym XF86Tools exec i3lock -c 2f333e
+
 
 ##############
 ### Status bar
