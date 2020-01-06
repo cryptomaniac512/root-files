@@ -10,13 +10,13 @@ antigen bundle rust
 antigen bundle docker
 antigen bundle sivakov512/goto-project-rs completions/zsh
 
-# fzf settings for zsh
-source /usr/share/doc/fzf/completion.zsh
-source /usr/share/doc/fzf/key-bindings.zsh
-
 antigen theme terminalparty
 
 antigen apply
+
+# fzf settings for zsh
+source /usr/share/doc/fzf/completion.zsh
+source /usr/share/doc/fzf/key-bindings.zsh
 
 alias dev-yandex="cd ~/Devel/Projects/yandex/"
 alias dev-main="cd ~/Devel/Projects/main/"
