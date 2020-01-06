@@ -1,6 +1,3 @@
-nitrogen --restore
-redshift &
-# blueman-applet &
-start-pulseaudio-x11
+#!/bin/sh
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-x11 i3
+exec dbus-launch --sh-syntax --exit-with-x11 $HOME/.xstart

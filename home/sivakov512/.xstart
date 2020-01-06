@@ -1,0 +1,5 @@
+nitrogen --restore &
+redshift &
+start-pulseaudio-x11 &
+
+i3
