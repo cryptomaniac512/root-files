@@ -8,7 +8,3 @@ polybar top &
 ### nm-applet
 killall -q nm-applet
 nm-applet &
-
-### xxkb
-# killall -q xxkb
-# xxkb &
