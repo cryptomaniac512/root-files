@@ -196,7 +196,7 @@ bindsym XF86Tools exec i3lock -c 2f333e
 ### Autostart
 exec_always --no-startup-id $HOME/.config/i3/exec_always.sh
 exec --no-startup-id chromium
-exec --no-startup-id Telegram
+exec --no-startup-id telegram-desktop
 exec --no-startup-id alacritty --title="Scratchpad terminal"
 
 
