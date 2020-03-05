@@ -117,6 +117,18 @@ nnoremap <c-k>n :TestNearest<cr>
 nnoremap <c-k><c-k> :TestNearest<cr>
 nnoremap <c-k>s :TestSuite<cr>
 
+" vim-dadbod
+let g:dadbods = []
+
+command! DBSelect :call popup_menu(map(copy(g:dadbods), {k,v -> v.name}), #{callback: 'DBSelected'})
+
+func! DBSelected(id, result)
+  if a:result != -1
+    let b:db = g:dadbods[a:result-1].url
+    echomsg 'DB ' . g:dadbods[a:result-1].name . ' is selected.'
+  endif
+endfunc
+
 " pgsql
 let g:sql_type_default = 'pgsql'
 
@@ -247,6 +259,15 @@ vmap <c-c>pf y:Files<cr><c-r>"
 nnoremap <leader>f :Files %:h<cr>
 nnoremap <leader>e :e %:h<cr>
 nnoremap <silent> <leader>i :ALEFix<cr>
+" vim-dadbod
+xnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExeLine) db#op_exec() . '_'
+
+xmap <leader>db  <Plug>(DBExe)
+nmap <leader>db  <Plug>(DBExe)
+omap <leader>db  <Plug>(DBExe)
+nmap <leader>dbb <Plug>(DBExeLine)
 
 " without context (starts with <c-x> and other)
 nnoremap <c-x>b :Buffers<cr>
