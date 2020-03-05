@@ -95,19 +95,27 @@ if executable('typescript-language-server')
         \ 'config': { 'filter': { 'name': 'prefix' } },
         \ })
 endif
+if executable('clangd')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+
 let g:lsp_diagnostics_enabled=0
 let g:lsp_preview_float=0
 let g:lsp_signature_help_enabled=0
-autocmd FileType rust,python,typescript,typescript.jsx setlocal omnifunc=lsp#complete
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> <c-]> <plug>(lsp-definition)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> <c-w>] <plug>(lsp-type-definition)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> gr <plug>(lsp-references)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> <c-n> <plug>(lsp-next-reference)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> <c-p> <plug>(lsp-previous-reference)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> gI <plug>(lsp-implementation)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> ga <plug>(lsp-code-action)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> gR <plug>(lsp-rename)
-autocmd FileType rust,python,typescript,typescript.jsx nmap <buffer> K <plug>(lsp-hover)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp setlocal omnifunc=lsp#complete
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-]> <plug>(lsp-definition)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-w>] <plug>(lsp-type-definition)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gr <plug>(lsp-references)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-n> <plug>(lsp-next-reference)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-p> <plug>(lsp-previous-reference)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gI <plug>(lsp-implementation)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> ga <plug>(lsp-code-action)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gR <plug>(lsp-rename)
+autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> K <plug>(lsp-hover)
 
 " vim-test
 let test#strategy = "vimterminal"
