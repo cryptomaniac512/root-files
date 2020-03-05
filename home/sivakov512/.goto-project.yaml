@@ -1,22 +1,7 @@
-dotenv-config:
-  path: ~/Devel/Projects/main/dotenv-config/
-  instructions:
-    - source ~/Devel/Envs/dotenv-config/bin/activate
-
 yandex-geocoder:
   path: ~/Devel/Projects/main/yandex-geocoder/
   instructions:
-    - source ~/Devel/Envs/yandex-geocoder/bin/activate
-
-python-markdown-full-yaml-metadata:
-  path: ~/Devel/Projects/main/python-markdown-full-yaml-metadata/
-  instructions:
-    - source ~/Devel/Envs/python-markdown-full-yaml-metadata/bin/activate
-
-pytest-falcon-client:
-  path: ~/Devel/Projects/main/pytest-falcon-client/
-  instructions:
-    - source ~/Devel/Envs/pytest-falcon-client/bin/activate
+    - source ./.env/bin/activate
 
 goto-project-rs:
   path: ~/Devel/Projects/main/goto-project-rs/
@@ -26,16 +11,3 @@ root-files:
 
 .vim:
   path: ~/.vim/
-
-storeon-isorouter:
-  path: ~/Devel/Projects/main/storeon-isorouter/
-  instructions:
-    - export PATH="./node_modules/.bin:$PATH"
-
-yafas-web-ui:
-  path: ~/Devel/Projects/yafas/web-ui/
-  instructions:
-    - export PATH="./node_modules/.bin:$PATH"
-
-yafas-auth-server:
-  path: ~/Devel/Projects/yafas/auth-server/
