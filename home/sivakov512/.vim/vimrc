@@ -107,16 +107,28 @@ endif
 let g:lsp_diagnostics_enabled=0
 let g:lsp_preview_float=0
 let g:lsp_signature_help_enabled=0
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp setlocal omnifunc=lsp#complete
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-]> <plug>(lsp-definition)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-w>] <plug>(lsp-type-definition)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gr <plug>(lsp-references)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-n> <plug>(lsp-next-reference)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> <c-p> <plug>(lsp-previous-reference)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gI <plug>(lsp-implementation)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> ga <plug>(lsp-code-action)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> gR <plug>(lsp-rename)
-autocmd FileType rust,python,typescript,typescript.jsx,c,cpp,objc,objcpp nmap <buffer> K <plug>(lsp-hover)
+
+function! s:on_lsp_buffer_enabled() abort
+	setlocal omnifunc=lsp#complete
+	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+
+	setlocal omnifunc=lsp#complete
+	nmap <buffer> <c-]> <plug>(lsp-definition)
+	nmap <buffer> <c-w>] <plug>(lsp-type-definition)
+	nmap <buffer> gr <plug>(lsp-references)
+	nmap <buffer> <c-n> <plug>(lsp-next-reference)
+	nmap <buffer> <c-p> <plug>(lsp-previous-reference)
+	nmap <buffer> gI <plug>(lsp-implementation)
+	nmap <buffer> ga <plug>(lsp-code-action)
+	nmap <buffer> gR <plug>(lsp-rename)
+	nmap <buffer> K <plug>(lsp-hover)
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " vim-test
 let test#strategy = "vimterminal"
