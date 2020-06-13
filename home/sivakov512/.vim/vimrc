@@ -75,8 +75,9 @@ if executable('rust-analyzer')
   au User lsp_setup call lsp#register_server({
         \ 'name': 'rust-analyzer',
         \ 'cmd': {server_info->['rust-analyzer']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'workspace_config': {'rust-analyzer': {'completion': {'postfix': {'enable': v:false}, 'addCallArgumentSnippets': v:false}}},
         \ 'whitelist': ['rust'],
+        \ 'config': { 'filter': { 'name': 'prefix' } },
         \ })
 endif
 if executable('pyls')
