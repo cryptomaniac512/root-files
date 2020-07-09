@@ -31,7 +31,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'mattn/emmet-vim'
 Plug 'dhruvasagar/vim-table-mode'
@@ -192,8 +192,8 @@ command! -bang -nargs=? -complete=dir Files
   \         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \ <bang>0)
 
-" Vim-jsx setup
-let g:jsx_ext_required=1
+" vim-jsx-pretty
+let g:vim_jsx_pretty_colorful_config = 1
 
 " vim-table-mode setup
 function! s:isAtStartOfLine(mapping)
