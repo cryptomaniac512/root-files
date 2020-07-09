@@ -61,7 +61,7 @@ let g:ale_fixers = {
             \'typescript': ['eslint', 'prettier'],
             \'typescript.tsx': ['eslint', 'prettier'],
             \'javascript': ['eslint', 'prettier'],
-            \'javascript.tsx': ['eslint', 'prettier'],
+            \'javascript.jsx': ['eslint', 'prettier'],
             \'json': ['prettier'],
             \'html': ['prettier'],
             \}
@@ -93,7 +93,7 @@ if executable('typescript-language-server')
         \ 'name': 'typescript-language-server',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
         \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-        \ 'whitelist': ['typescript', 'typescript.jsx', 'javascript', 'javascript.jsx'],
+        \ 'whitelist': ['typescript', 'typescript.tsx', 'javascript', 'javascript.jsx'],
         \ 'config': { 'filter': { 'name': 'prefix' } },
         \ })
 endif
@@ -337,7 +337,7 @@ tnoremap <c-r> <c-w>"
 cnoremap W w
 
 
-autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescript.jsx
+autocmd BufRead,BufNewFile *.ts setlocal filetype=typescript.tsx
 autocmd BufRead,BufNewFile *.pcss setlocal filetype=scss
 
 
