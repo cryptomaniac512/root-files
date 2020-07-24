@@ -1,3 +1,6 @@
+tmp:
+  path: ~/Devel/Projects/tmp/
+
 yandex-geocoder:
   path: ~/Devel/Projects/main/yandex-geocoder/
   instructions:
