@@ -9,5 +9,3 @@ goto-project-rs:
 root-files:
   path: ~/Devel/Projects/main/root-files/
 
-.vim:
-  path: ~/.vim/
