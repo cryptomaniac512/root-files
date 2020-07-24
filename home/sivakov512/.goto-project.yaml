@@ -9,3 +9,8 @@ goto-project-rs:
 root-files:
   path: ~/Devel/Projects/main/root-files/
 
+book:
+  path: ~/Devel/Projects/tdd-guns/book/
+
+book-ui:
+  path: ~/Devel/Projects/tdd-guns/book-ui/
