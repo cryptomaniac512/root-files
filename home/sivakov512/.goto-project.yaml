@@ -9,9 +9,6 @@ yandex-geocoder:
 goto-project-rs:
   path: ~/Devel/Projects/main/goto-project-rs/
 
-root-files:
-  path: ~/Devel/Projects/main/root-files/
-
 book:
   path: ~/Devel/Projects/tdd-guns/book/
 
