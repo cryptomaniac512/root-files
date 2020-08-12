@@ -21,6 +21,8 @@ source /usr/share/fzf/key-bindings.zsh
 alias dev-yandex="cd ~/Devel/Projects/yandex/"
 alias dev-main="cd ~/Devel/Projects/main/"
 
+alias root-files="git --git-dir=$HOME/.root-files.git/ --work-tree=/"
+
 alias pip-user-update="pip freeze --user | cut -d'=' -f1 | xargs pip install --user -U"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
