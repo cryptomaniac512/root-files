@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=emulator @pixel0
+Icon=Pixel
+Terminal=false
+
+Name=Pixel
+GenericName=Pixel
+Actions=New;
