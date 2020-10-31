@@ -9,8 +9,15 @@ yandex-geocoder:
 goto-project-rs:
   path: ~/Devel/Projects/main/goto-project-rs/
 
-book:
-  path: ~/Devel/Projects/tdd-guns/book/
+tinkoff-api:
+  path: ~/Devel/Projects/main/tinkoff-api/
+  instructions:
+    - source ./.env/bin/activate
 
-book-ui:
-  path: ~/Devel/Projects/tdd-guns/book-ui/
+tinkoff-bank-client-rs:
+  path: ~/Devel/Projects/main/tinkoff-bank-client-rs/
+
+guidebook:
+  path: ~/Devel/Projects/tourist-app/guidebook/
+  instructions:
+    - source ./.env/bin/activate
