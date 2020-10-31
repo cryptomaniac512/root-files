@@ -49,7 +49,7 @@ set hidden
 " Ale setup
 let g:ale_linters = {
             \'rust': ['cargo', 'analyzer'],
-            \'python': ['flake8', 'pylint'],
+            \'python': ['flake8', 'pylint', 'mypy'],
             \'typescript': ['eslint', 'typecheck', 'tsserver'],
             \'typescript.tsx': ['eslint', 'typecheck', 'tsserver'],
             \'javascript': ['eslint'],
@@ -109,12 +109,13 @@ let g:lsp_diagnostics_enabled=0
 let g:lsp_preview_float=0
 let g:lsp_signature_help_enabled=0
 let g:lsp_documentation_float=0
+let g:lsp_insert_text_enabled=0
+let g:lsp_text_edit_enabled=0
 
 function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
 	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 
-	setlocal omnifunc=lsp#complete
 	nmap <buffer> <c-]> <plug>(lsp-definition)
 	nmap <buffer> <c-w>] <plug>(lsp-type-definition)
 	nmap <buffer> gr <plug>(lsp-references)
