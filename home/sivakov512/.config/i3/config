@@ -29,6 +29,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [title="^Android Emulator"] floating enable
+for_window [title="^Zoom"] floating enable
 
 
 ##########################
