@@ -277,6 +277,8 @@ cnoremap <C-e> <End>
 " awkward commands fixes
 tnoremap <c-r> <c-w>"
 cnoremap W w
+cnoremap Vs vs
+cnoremap VS vs
 
 
 function! SourceIfExists(file)
