@@ -11,29 +11,23 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'w0rp/ale'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-dadbod'
-Plug 'lifepillar/pgsql.vim'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 Plug 'jreybert/vimagit'
 Plug 'mbbill/undotree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 
+Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-
-Plug 'mattn/emmet-vim'
-Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 " General configuration options
@@ -49,20 +43,11 @@ set hidden
 let g:ale_linters = {
             \'rust': ['cargo', 'analyzer'],
             \'python': ['flake8', 'pylint', 'mypy'],
-            \'typescript': ['eslint', 'typecheck', 'tsserver'],
-            \'typescript.tsx': ['eslint', 'typecheck', 'tsserver'],
-            \'javascript': ['eslint'],
-            \'javascript.jsx': ['eslint'],
             \}
 let g:ale_fixers = {
             \'rust': ['rustfmt'],
             \'python': ['isort', 'yapf', 'black'],
-            \'typescript': ['eslint', 'prettier'],
-            \'typescript.tsx': ['eslint', 'prettier'],
-            \'javascript': ['eslint', 'prettier'],
-            \'javascript.jsx': ['eslint', 'prettier'],
             \'json': ['prettier'],
-            \'html': ['prettier'],
             \}
 let g:ale_echo_msg_format='%code: %%s [%linter%]'
 let g:ale_sign_column_always=1
@@ -90,7 +75,6 @@ function LC_maps()
     nmap <buffer> <silent> K <plug>(lcn-hover)
   endif
 endfunction
-
 autocmd FileType * call LC_maps()
 
 " vim-test
@@ -152,9 +136,6 @@ command! -bang -nargs=? -complete=dir Files
   \ <bang>0 ? fzf#vim#with_preview('up:60%')
   \         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \ <bang>0)
-
-" vim-jsx-pretty
-let g:vim_jsx_pretty_colorful_config = 1
 
 " vim-table-mode setup
 function! s:isAtStartOfLine(mapping)
@@ -296,10 +277,6 @@ cnoremap <C-e> <End>
 " awkward commands fixes
 tnoremap <c-r> <c-w>"
 cnoremap W w
-
-
-autocmd BufRead,BufNewFile *.ts setlocal filetype=typescript.tsx
-autocmd BufRead,BufNewFile *.pcss setlocal filetype=scss
 
 
 function! SourceIfExists(file)
