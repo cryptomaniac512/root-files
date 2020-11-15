@@ -9,11 +9,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 
 Plug 'w0rp/ale'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-dadbod'
 Plug 'lifepillar/pgsql.vim'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 Plug 'jreybert/vimagit'
 Plug 'mbbill/undotree'
@@ -22,7 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'editorconfig/editorconfig-vim'
@@ -70,68 +69,29 @@ let g:ale_sign_column_always=1
 let g:ale_rust_cargo_use_clippy=1
 let g:ale_rust_rls_toolchain=''
 
-" lsp
-if executable('rust-analyzer')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'rust-analyzer',
-        \ 'cmd': {server_info->['rust-analyzer']},
-        \ 'workspace_config': {'rust-analyzer': {'completion': {'postfix': {'enable': v:false}, 'addCallArgumentSnippets': v:false}}},
-        \ 'whitelist': ['rust'],
-        \ 'config': { 'filter': { 'name': 'prefix' } },
-        \ })
-endif
-if executable('pyls')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ 'config': { 'filter': { 'name': 'prefix' } },
-        \ })
-endif
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'typescript-language-server',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-        \ 'whitelist': ['typescript', 'typescript.tsx', 'javascript', 'javascript.jsx'],
-        \ 'config': { 'filter': { 'name': 'prefix' } },
-        \ })
-endif
-if executable('clangd')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rust-analyzer'],
+    \ 'python': ['pyls'],
+    \ }
+let g:LanguageClient_hoverPreview = 'Always'
+let g:LanguageClient_selectionUI = 'quickfix'
+let g:LanguageClient_usePopupHover = 0
+let g:LanguageClient_diagnosticsEnable = 0
 
-let g:lsp_diagnostics_enabled=0
-let g:lsp_preview_float=0
-let g:lsp_signature_help_enabled=0
-let g:lsp_documentation_float=0
-let g:lsp_insert_text_enabled=0
-let g:lsp_text_edit_enabled=0
-
-function! s:on_lsp_buffer_enabled() abort
-	setlocal omnifunc=lsp#complete
-	if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-
-	nmap <buffer> <c-]> <plug>(lsp-definition)
-	nmap <buffer> <c-w>] <plug>(lsp-type-definition)
-	nmap <buffer> gr <plug>(lsp-references)
-	nmap <buffer> <c-n> <plug>(lsp-next-reference)
-	nmap <buffer> <c-p> <plug>(lsp-previous-reference)
-	nmap <buffer> gI <plug>(lsp-implementation)
-	nmap <buffer> ga <plug>(lsp-code-action)
-	nmap <buffer> gR <plug>(lsp-rename)
-	nmap <buffer> K <plug>(lsp-hover)
+function LC_maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nmap <buffer> <silent> <c-]> <plug>(lcn-definition)
+    nmap <buffer> <silent> <c-w>] <plug>(lcn-type-definition)
+    nmap <buffer> <silent> gr <plug>(lcn-references)
+    nmap <buffer> <silent> gI <plug>(lcn-implementation)
+    nmap <buffer> <silent> ga <plug>(lcn-code-action)
+    nmap <buffer> <silent> gR <plug>(lcn-rename)
+    nmap <buffer> <silent> K <plug>(lcn-hover)
+  endif
 endfunction
 
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+autocmd FileType * call LC_maps()
 
 " vim-test
 let test#strategy = "vimterminal"
