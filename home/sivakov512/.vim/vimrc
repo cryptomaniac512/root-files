@@ -65,6 +65,7 @@ let g:LanguageClient_hoverPreview = 'Always'
 let g:LanguageClient_selectionUI = 'quickfix'
 let g:LanguageClient_usePopupHover = 0
 let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_showCompletionDocs = 0
 
 function LC_maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
