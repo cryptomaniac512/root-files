@@ -60,6 +60,7 @@ let g:ale_rust_rls_toolchain=''
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rust-analyzer'],
     \ 'python': ['pyls'],
+    \ 'go': ['gopls'],
     \ }
 let g:LanguageClient_hoverPreview = 'Always'
 let g:LanguageClient_selectionUI = 'quickfix'
