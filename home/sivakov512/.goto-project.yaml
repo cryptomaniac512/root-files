@@ -1,28 +1,23 @@
-tmp:
-  path: ~/Devel/Projects/tmp/
-
-yandex-geocoder:
-  path: ~/Devel/Projects/main/yandex-geocoder/
-  instructions:
-    - source ./.env/bin/activate
-
-goto-project-rs:
-  path: ~/Devel/Projects/main/goto-project-rs/
-
-tinkoff-api:
-  path: ~/Devel/Projects/main/tinkoff-api/
-  instructions:
-    - source ./.env/bin/activate
-
-tinkoff-bank-client-rs:
-  path: ~/Devel/Projects/main/tinkoff-bank-client-rs/
-
-pytest-aiohttp-client:
-  path: ~/Devel/Projects/main/pytest-aiohttp-client/
+guidebook:
+  path: ~/Devel/tourist-app/guidebook/
   instructions:
     - source ./.venv/bin/activate
 
-guidebook:
-  path: ~/Devel/Projects/tourist-app/guidebook/
+yandex-geocoder:
+  path: ~/Devel/main/yandex-geocoder/
   instructions:
-    - source ./.env/bin/activate
+    - source ./.venv/bin/activate
+
+goto-project-rs:
+  path: ~/Devel/main/goto-project-rs/
+
+tinkoff-bank-client-rs:
+  path: ~/Devel/main/tinkoff-bank-client-rs/
+
+tinkoff-copier:
+  path: ~/Devel/main/tinkoff-copier/
+
+pytest-aiohttp-client:
+  path: ~/Devel/main/pytest-aiohttp-client/
+  instructions:
+    - source ./.venv/bin/activate
