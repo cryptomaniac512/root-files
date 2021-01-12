@@ -1,8 +1,0 @@
-[user]
-	email = sivakov512@gmail.com
-	name = Nikita Sivakov
-[core]
-	excludesfile = /home/sivakov512/.gitignore_global
-	editor = vim
-[includeIf "gitdir:~/Devel/yandex/"]
-	path = ~/Devel/yandex/.gitconfig
