@@ -120,6 +120,9 @@
         "SHARE_HISTORY"
         "HIST_FCNTL_LOCK"
       ];
+      shellAliases = {
+        root-files = "git --git-dir=$HOME/.root-files.git/ --work-tree=/";
+      };
       ohMyZsh = {
         enable = true;
         theme = "terminalparty";
