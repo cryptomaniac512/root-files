@@ -77,9 +77,13 @@
     roboto-mono
   ];
 
-  users.users.sivakov512 = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+
+    users.sivakov512 = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" "audio" ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -105,6 +109,21 @@
     gnupg = {
       agent.enable = true;
       agent.enableSSHSupport = true;
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      setOptions = [
+        "HIST_IGNORE_ALL_DUPS"
+        "SHARE_HISTORY"
+        "HIST_FCNTL_LOCK"
+      ];
+      ohMyZsh = {
+        enable = true;
+        theme = "terminalparty";
+      };
     };
   };
 
