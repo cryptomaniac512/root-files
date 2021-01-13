@@ -115,6 +115,9 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+      shellInit = ''
+        export PATH="$HOME/.local/bin:$PATH"
+      '';
       setOptions = [
         "HIST_IGNORE_ALL_DUPS"
         "SHARE_HISTORY"
