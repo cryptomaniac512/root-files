@@ -93,12 +93,11 @@
     chromium
     tdesktop
     git
-    glibc.out
     gcc
     binutils
   ];
  
-  environment.pathsToLink = [ "/libexec" "/lib64" ];
+  environment.pathsToLink = [ "/libexec" ];
 
   environment.variables = {
     EDITOR = "vim";
@@ -139,6 +138,11 @@
   };
 
   services.gnome3.gnome-keyring.enable = true;
+
+  system.activationScripts.ld-linux =  ''
+    mkdir -p /lib64
+    ln -sf ${pkgs.glibc}/lib/ld-linux-x86-64.so.2 /lib64
+  '';
 
   system.stateVersion = "20.09";
 }
