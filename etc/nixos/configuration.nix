@@ -142,6 +142,7 @@
   system.activationScripts.ld-linux =  ''
     mkdir -p /lib64
     ln -sf ${pkgs.glibc}/lib/ld-linux-x86-64.so.2 /lib64
+    ln -sf ${pkgs.perl}/bin/perl /usr/bin
   '';
 
   system.stateVersion = "20.09";
