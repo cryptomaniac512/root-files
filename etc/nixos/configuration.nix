@@ -93,13 +93,18 @@
     chromium
     tdesktop
     git
+    glibc.out
+    gcc
+    binutils
   ];
  
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = [ "/libexec" "/lib64" ];
 
   environment.variables = {
     EDITOR = "vim";
     TERMINAL = "alacritty";
+    LD_LIBRARY_PATH = [ "${pkgs.zlib}/lib" "${pkgs.openssl.out}/lib"];
+    NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
   };
 
   programs = {
