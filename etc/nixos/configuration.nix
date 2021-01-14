@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix  ];
@@ -102,7 +102,14 @@
   environment.variables = {
     EDITOR = "vim";
     TERMINAL = "alacritty";
-    LD_LIBRARY_PATH = [ "${pkgs.zlib}/lib" "${pkgs.openssl.out}/lib"];
+
+    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
+      openssl
+      zlib
+    ];
+
+    # Python uses commands like "gcc -Wl,-t -lcrypto" (followed by objdump) to discover libraries.
+    # gcc uses this var to extend its library search paths
     NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
   };
 
@@ -141,7 +148,11 @@
 
   system.activationScripts.ld-linux =  ''
     mkdir -p /lib64
+
+    # Let non-NixOS binaries run without patchelf --set-interpreter
     ln -sf ${pkgs.glibc}/lib/ld-linux-x86-64.so.2 /lib64
+
+    # Provide #!/usr/bin/perl
     ln -sf ${pkgs.perl}/bin/perl /usr/bin
   '';
 
