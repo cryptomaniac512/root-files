@@ -4,9 +4,12 @@
   imports = [ ./hardware-configuration.nix  ];
 
   hardware.cpu.intel.updateMicrocode = true;
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    tmpOnTmpfs = true;
   };
 
   networking = {
