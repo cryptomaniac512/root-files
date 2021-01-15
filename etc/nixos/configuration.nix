@@ -70,11 +70,14 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    python38
     alacritty
     vim_configurable
+
     chromium
     tdesktop
+
+    python38
+
     git
     gcc
     binutils
