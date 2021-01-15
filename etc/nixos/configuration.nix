@@ -3,8 +3,7 @@
 {
   imports = [ ./hardware-configuration.nix  ];
 
-  nixpkgs.config.allowUnfree = true;
-
+  hardware.cpu.intel.updateMicrocode = true;
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -21,11 +20,7 @@
 
   time.timeZone = "Europe/Moscow";
 
-  i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
-
-  hardware.cpu.intel.updateMicrocode = true;
-
   services.xserver = {
     enable = true;
 
@@ -34,11 +29,11 @@
       disableWhileTyping = true;
     };
 
-    layout = "us,ru";
-    xkbOptions = "grp:win_space_toggle,ctrl:swapcaps";
-
     videoDrivers = [ "modesetting" ];
     useGlamor = true;
+
+    layout = "us,ru";
+    xkbOptions = "grp:win_space_toggle,ctrl:swapcaps";
 
     desktopManager.xterm.enable = false;
 
@@ -71,21 +66,9 @@
       ];
     };
   };
+  fonts.fonts = with pkgs; [ roboto roboto-mono ];
 
-  fonts.fonts = with pkgs; [
-    roboto
-    roboto-mono
-  ];
-
-  users = {
-    defaultUserShell = pkgs.zsh;
-
-    users.sivakov512 = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" ];
-    };
-  };
-
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     python38
     alacritty
@@ -96,23 +79,6 @@
     gcc
     binutils
   ];
- 
-  environment.pathsToLink = [ "/libexec" ];
-
-  environment.variables = {
-    EDITOR = "vim";
-    TERMINAL = "alacritty";
-
-    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [
-      openssl
-      zlib
-    ];
-
-    # Python uses commands like "gcc -Wl,-t -lcrypto" (followed by objdump) to discover libraries.
-    # gcc uses this var to extend its library search paths
-    NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
-  };
-
   programs = {
     seahorse.enable = true;
     nm-applet.enable = true;
@@ -145,7 +111,17 @@
   };
 
   services.gnome3.gnome-keyring.enable = true;
+ 
+  environment.pathsToLink = [ "/libexec" ];
+  environment.variables = {
+    EDITOR = "vim";
+    TERMINAL = "alacritty";
 
+    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ openssl zlib ];
+    # Python uses commands like "gcc -Wl,-t -lcrypto" (followed by objdump) to discover libraries.
+    # gcc uses this var to extend its library search paths
+    NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
+  };
   system.activationScripts.ld-linux =  ''
     mkdir -p /lib64
 
@@ -155,6 +131,14 @@
     # Provide #!/usr/bin/perl
     ln -sf ${pkgs.perl}/bin/perl /usr/bin
   '';
+
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.sivakov512 = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" "audio" ];
+    };
+  };
 
   system.stateVersion = "20.09";
 }
