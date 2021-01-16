@@ -84,9 +84,10 @@
     python38Packages.python-language-server
     python38Packages.virtualenv
 
-    git
-    gcc
     binutils
+    gcc
+    git
+    protobuf
   ];
   programs = {
     seahorse.enable = true;
