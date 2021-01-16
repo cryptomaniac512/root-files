@@ -126,7 +126,7 @@
     EDITOR = "vim";
     TERMINAL = "alacritty";
 
-    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ openssl zlib ];
+    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ stdenv.cc.cc.lib openssl zlib ];
     # Python uses commands like "gcc -Wl,-t -lcrypto" (followed by objdump) to discover libraries.
     # gcc uses this var to extend its library search paths
     NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
