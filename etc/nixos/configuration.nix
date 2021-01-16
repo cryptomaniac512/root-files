@@ -80,6 +80,9 @@
     tdesktop
 
     python38
+    python38Packages.ipython
+    python38Packages.python-language-server
+    python38Packages.virtualenv
 
     git
     gcc
