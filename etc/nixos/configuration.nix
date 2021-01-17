@@ -30,6 +30,7 @@
     libinput = {
       enable = true;
       disableWhileTyping = true;
+      tapping = false;
     };
 
     videoDrivers = [ "modesetting" ];
