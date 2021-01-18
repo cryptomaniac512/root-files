@@ -3,13 +3,22 @@
 {
   imports = [ ./hardware-configuration.nix  ];
 
-  hardware.cpu.intel.updateMicrocode = true;
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
     tmpOnTmpfs = true;
+  };
+
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    pulseaudio = {
+      enable = true;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      package = pkgs.pulseaudioFull;
+    };
+    bluetooth.enable = true;
   };
 
   networking = {
@@ -121,7 +130,10 @@
     };
   };
 
-  services.gnome3.gnome-keyring.enable = true;
+  services = {
+    gnome3.gnome-keyring.enable = true;
+    blueman.enable = true;
+  };
  
   environment.pathsToLink = [ "/libexec" ];
   environment.variables = {
