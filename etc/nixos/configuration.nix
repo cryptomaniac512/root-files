@@ -87,6 +87,7 @@
     vim_configurable
 
     chromium
+    pavucontrol
     tdesktop
     zoom-us
 
