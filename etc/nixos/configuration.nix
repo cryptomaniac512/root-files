@@ -88,6 +88,7 @@
 
     chromium
     tdesktop
+    zoom-us
 
     python38
     python38Packages.ipython
