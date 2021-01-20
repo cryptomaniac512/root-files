@@ -147,6 +147,9 @@
     # gcc uses this var to extend its library search paths
     NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
   };
+  environment.interactiveShellInit = ''
+    test -r $HOME/.dir_colors &&  eval `${pkgs.coreutils}/bin/dircolors $HOME/.dir_colors`
+  '';
   system.activationScripts.ld-linux =  ''
     mkdir -p /lib64
 
