@@ -52,6 +52,9 @@
 
     displayManager = {
       defaultSession = "none+i3";
+      sessionCommands = ''
+        test -r $HOME/.Xresources && ${pkgs.xorg.xrdb}/bin/xrdb -merge $HOME/.Xresources
+      '';
 
       lightdm = {
         enable = true;
