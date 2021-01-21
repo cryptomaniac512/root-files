@@ -77,16 +77,16 @@
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
         dmenu
-        i3status
-        i3blocks
+        polybarFull
       ];
     };
   };
-  fonts.fonts = with pkgs; [ roboto roboto-mono ];
+  fonts.fonts = with pkgs; [ roboto roboto-mono font-awesome_4 ];
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
+    psmisc
     vim_configurable
 
     chromium

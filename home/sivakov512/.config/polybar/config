@@ -1,0 +1,137 @@
+[colors]
+nord0 = #2e3440
+nord1 = #3b4252
+nord2 = #434c5e
+nord3 = #4c566a
+nord4 = #d8dee9
+nord5 = #e5e9f0
+nord6 = #eceff4
+nord7 = #8fbcbb
+nord8 = #88c0d0
+nord9 = #81a1c1
+nord10 = #5e81ac
+nord11 = #bf616a
+nord12 = #d08770
+nord13 = #ebcb8b
+nord14 = #a3be8c
+nord15 = #b48ead
+
+foreground = ${colors.nord4}
+foreground-alt = ${colors.nord7}
+background = ${colors.nord0}
+background-alt = ${colors.nord1}
+alert = ${colors.nord11}
+
+[settings]
+screenchange-reload = true
+
+[bar/top]
+width = 100%
+height = 24
+fixed-center = true
+
+padding-left = 0
+padding-right = 2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Roboto:size=10;2
+font-1 = FontAwesome:size=10;2
+
+modules-left = i3 xwindow
+modules-center = 
+modules-right = xkeyboard battery date
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = i3
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 3
+label-mode-background = ${colors.alert}
+
+label-focused = %index%
+label-focused-foreground = ${colors.background-alt}
+label-focused-background = ${colors.foreground-alt}
+label-focused-padding = 3
+
+label-unfocused = %index%
+label-unfocused-padding = 3
+label-unfocused-background = ${colors.background-alt}
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:80:...%
+label-padding = 3
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout = %layout%
+label-layout-foreground = ${colors.background-alt}
+label-layout-background = ${colors.foreground-alt}
+label-layout-padding = 3
+
+label-indicator-padding = 3
+label-indicator-background = ${colors.alert}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 96
+
+format-charging = <animation-charging>
+format-charging-padding = 3
+format-full = <ramp-capacity>
+format-full-padding = 3
+format-discharging = <ramp-capacity>
+format-discharging-padding = 3
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1-foreground = ${colors.nord12}
+ramp-capacity-2-foreground = ${colors.nord13}
+
+animation-charging-0 = ${self.ramp-capacity-0}
+animation-charging-1 = ${self.ramp-capacity-1}
+animation-charging-2 = ${self.ramp-capacity-2}
+animation-charging-3 = ${self.ramp-capacity-3}
+animation-charging-4 = ${self.ramp-capacity-4}
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%F, %A"
+time = %H:%M
+label = %date% %time%
+
+format-padding = 2
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
