@@ -58,6 +58,7 @@
 
       lightdm = {
         enable = true;
+        background = "/etc/nixos/background-image";
         greeters.gtk = {
           indicators = [ "~spacer" "~spacer" "~clock" "~power" ];
           iconTheme = {
