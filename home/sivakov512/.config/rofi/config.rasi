@@ -1,4 +1,5 @@
 configuration {
+  width: 40;
 	modi: "drun";
 	lines: 15;
 	font: "Roboto 11";
