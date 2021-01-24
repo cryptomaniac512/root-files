@@ -90,7 +90,9 @@
     vim_configurable
 
     chromium
+    flameshot
     pavucontrol
+    scrot
     tdesktop
     zoom-us
 
