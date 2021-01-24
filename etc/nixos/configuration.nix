@@ -76,7 +76,7 @@
       enable = true;
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
-        dmenu
+        rofi
         polybarFull
       ];
     };

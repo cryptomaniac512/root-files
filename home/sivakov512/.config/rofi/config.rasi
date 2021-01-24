@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun";
+	lines: 15;
+	font: "Roboto 11";
+	theme: "nord";
+}
+
+/* vim:ft=css
