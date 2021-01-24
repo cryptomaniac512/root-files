@@ -141,6 +141,12 @@
   services = {
     gnome3.gnome-keyring.enable = true;
     blueman.enable = true;
+    dbus.packages = [ pkgs.dunst ];
+  };
+
+  systemd = {
+    user.services.dunst.serviceConfig.ExecStart = [ "" "${pkgs.dunst}/bin/dunst" ];
+    packages = [ pkgs.dunst ];
   };
  
   environment.pathsToLink = [ "/libexec" ];
