@@ -17,7 +17,7 @@ nord14 = #a3be8c
 nord15 = #b48ead
 
 foreground = ${colors.nord4}
-foreground-alt = ${colors.nord7}
+foreground-alt = ${colors.nord6}
 background = ${colors.nord0}
 background-alt = ${colors.nord1}
 alert = ${colors.nord11}
@@ -36,7 +36,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 font-0 = Roboto:size=10;2
-font-1 = FontAwesome:size=10;2
+font-1 = FontAwesome:size=10;3
 
 modules-left = i3 xwindow
 modules-center = 
@@ -57,8 +57,8 @@ label-mode-padding = 3
 label-mode-background = ${colors.alert}
 
 label-focused = %index%
-label-focused-foreground = ${colors.background-alt}
-label-focused-background = ${colors.foreground-alt}
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-background = ${colors.nord10}
 label-focused-padding = 3
 
 label-unfocused = %index%
@@ -70,7 +70,7 @@ label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
 label-urgent = %index%
-label-urgent-foreground = ${colors.background-alt}
+label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 
@@ -86,12 +86,12 @@ blacklist-0 = num lock
 format = <label-layout><label-indicator>
 
 label-layout = %layout%
-label-layout-foreground = ${colors.background-alt}
-label-layout-background = ${colors.foreground-alt}
+label-layout-foreground = ${colors.foreground-alt}
+label-layout-background = ${colors.background-alt}
 label-layout-padding = 3
 
 label-indicator-padding = 3
-label-indicator-foreground = ${colors.background}
+label-indicator-foreground = ${colors.foreground-alt}
 label-indicator-background = ${colors.alert}
 
 [module/battery]
