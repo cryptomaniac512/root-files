@@ -54,6 +54,7 @@
       defaultSession = "none+i3";
       sessionCommands = ''
         test -r $HOME/.Xresources && ${pkgs.xorg.xrdb}/bin/xrdb -merge $HOME/.Xresources
+        ${pkgs.xss-lock}/bin/xss-lock -- ${pkgs.lightdm}/bin/dm-tool lock &
       '';
 
       lightdm = {
