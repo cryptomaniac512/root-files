@@ -89,6 +89,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
+    fzf
     psmisc
     vim_configurable
 
