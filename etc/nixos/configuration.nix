@@ -97,6 +97,7 @@
     flameshot
     pavucontrol
     scrot
+    slack
     tdesktop
     zoom-us
 
