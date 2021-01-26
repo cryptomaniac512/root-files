@@ -61,7 +61,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec "rofi -show drun"
+bindsym $mod+p exec "rofi -show drun"
 
 # change focus
 bindsym $mod+h focus left
@@ -97,8 +97,8 @@ bindsym $mod+Shift+o floating toggle
 bindsym $mod+o focus mode_toggle
 
 # focus container (parent, child)
-bindsym $mod+p focus parent
-bindsym $mod+c focus child
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
 
 # scratchpad
 bindsym $mod+x scratchpad show
