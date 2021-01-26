@@ -31,6 +31,7 @@
   };
 
   time.timeZone = "Europe/Moscow";
+  location.provider = "geoclue2";
 
   console.useXkbConfig = true;
   services.xserver = {
@@ -143,6 +144,13 @@
     gnome3.gnome-keyring.enable = true;
     blueman.enable = true;
     dbus.packages = [ pkgs.dunst ];
+    redshift = {
+      enable = true;
+      temperature = {
+        day = 5500;
+        night = 3500;
+      };
+    };
   };
 
   systemd = {
