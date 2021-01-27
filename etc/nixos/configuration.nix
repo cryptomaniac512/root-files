@@ -107,6 +107,7 @@
     python38Packages.virtualenv
 
     binutils
+    docker-compose
     gcc
     git
     protobuf
@@ -142,6 +143,7 @@
     };
   };
 
+  virtualisation.docker.enable = true;
   services = {
     gnome3.gnome-keyring.enable = true;
     blueman.enable = true;
@@ -187,7 +189,7 @@
     defaultUserShell = pkgs.zsh;
     users.sivakov512 = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
     };
   };
 
