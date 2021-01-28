@@ -91,6 +91,7 @@
     alacritty
     fzf
     psmisc
+    ripgrep
     vim_configurable
 
     chromium
