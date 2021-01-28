@@ -31,7 +31,11 @@
   };
 
   time.timeZone = "Europe/Moscow";
-  location.provider = "geoclue2";
+  location = {
+    provider = "manual";
+    latitude = 55.77;
+    longitude = 37.68;
+  };
 
   console.useXkbConfig = true;
   services.xserver = {
