@@ -94,6 +94,7 @@
     vim_configurable
 
     chromium
+    firefox
     flameshot
     pavucontrol
     scrot
