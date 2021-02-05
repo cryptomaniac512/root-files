@@ -93,6 +93,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     alacritty
+    brightnessctl
     fzf
     psmisc
     ripgrep
@@ -161,6 +162,13 @@
         night = 3500;
       };
     };
+    actkbd = {
+      enable = true;
+      bindings = [
+        { keys = [ 224 ]; events = [ "key" ]; command = "${pkgs.brightnessctl}/bin/brightnessctl set 5%-"; }
+        { keys = [ 225 ]; events = [ "key" ]; command = "${pkgs.brightnessctl}/bin/brightnessctl set +5%"; }
+      ];
+    };
   };
 
   systemd = {
@@ -195,7 +203,7 @@
     defaultUserShell = pkgs.zsh;
     users.sivakov512 = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "docker" "video" ];
     };
   };
 
