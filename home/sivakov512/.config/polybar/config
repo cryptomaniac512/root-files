@@ -40,7 +40,7 @@ font-1 = FontAwesome:size=10;3
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = xkeyboard battery date
+modules-right = xkeyboard pulseaudio battery date
 
 tray-position = right
 tray-padding = 2
@@ -93,6 +93,30 @@ label-layout-padding = 3
 label-indicator-padding = 3
 label-indicator-foreground = ${colors.foreground-alt}
 label-indicator-background = ${colors.alert}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <bar-volume>
+format-volume-prefix = " "
+format-volume-padding = 2
+
+format-muted = <bar-volume>
+format-muted-prefix = "   "
+format-muted-foreground = ${colors.nord3}
+format-muted-prefix-foreground = ${colors.foreground-alt}
+format-muted-padding = 2
+
+bar-volume-width = 10
+bar-volume-foreground = ${colors.foreground-alt}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = —
+bar-volume-fill-font = 2
+bar-volume-empty = —
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.nord3}
 
 [module/battery]
 type = internal/battery
