@@ -99,6 +99,10 @@
     psmisc
     ripgrep
     vim_configurable
+    xfce.thunar
+    xfce.xfconf  # needed to save settings
+    xfce.tumbler  # thumbnails
+    xfce.exo  # 'open terminal here'
 
     chromium
     firefox
@@ -153,6 +157,7 @@
 
   virtualisation.docker.enable = true;
   services = {
+    gvfs.enable = true;
     gnome3.gnome-keyring.enable = true;
     blueman.enable = true;
     dbus.packages = [ pkgs.dunst ];
