@@ -94,6 +94,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     brightnessctl
+    dnsutils
     fzf
     psmisc
     ripgrep
