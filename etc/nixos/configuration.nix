@@ -113,6 +113,12 @@
     tdesktop
     zoom-us
 
+    cargo
+    clippy
+    rust-analyzer
+    rustc
+    rustfmt
+
     python38
     python38Packages.ipython
     python38Packages.python-language-server
