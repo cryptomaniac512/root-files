@@ -125,6 +125,7 @@
     python38Packages.virtualenv
 
     binutils
+    direnv
     docker-compose
     gcc
     git
@@ -181,6 +182,7 @@
         { keys = [ 225 ]; events = [ "key" ]; command = "${pkgs.brightnessctl}/bin/brightnessctl set +5%"; }
       ];
     };
+    lorri.enable = true;
   };
 
   systemd = {
