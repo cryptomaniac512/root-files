@@ -1,0 +1,294 @@
+" Install vim-plug automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
+
+Plug 'w0rp/ale'
+Plug 'janko/vim-test'
+Plug 'tpope/vim-dadbod'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+
+Plug 'jreybert/vimagit'
+Plug 'mbbill/undotree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim', {'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'dhruvasagar/vim-table-mode'
+
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'lifepillar/pgsql.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'cespare/vim-toml'
+call plug#end()
+
+" General configuration options
+set nocompatible
+set backspace=indent,eol,start  " allow backspacing over
+set history=10000
+set showcmd  " show incomplete commands at the bottom
+set showmode
+set autoread
+set hidden
+
+" Ale setup
+let g:ale_linters = {
+            \'rust': ['cargo', 'analyzer'],
+            \'python': ['flake8', 'pylint', 'mypy'],
+            \}
+let g:ale_fixers = {
+            \'rust': ['rustfmt'],
+            \'python': ['isort', 'yapf', 'black'],
+            \'json': ['prettier'],
+            \}
+let g:ale_echo_msg_format='%code: %%s [%linter%]'
+let g:ale_sign_column_always=1
+let g:ale_rust_cargo_use_clippy=1
+let g:ale_rust_rls_toolchain=''
+
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rust-analyzer'],
+    \ 'python': ['pyls'],
+    \ 'go': ['gopls'],
+    \ }
+let g:LanguageClient_hoverPreview = 'Always'
+let g:LanguageClient_selectionUI = 'quickfix'
+let g:LanguageClient_usePopupHover = 0
+let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_showCompletionDocs = 0
+
+function LC_maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nmap <buffer> <silent> <c-]> <plug>(lcn-definition)
+    nmap <buffer> <silent> <c-w>] <plug>(lcn-type-definition)
+    nmap <buffer> <silent> gr <plug>(lcn-references)
+    nmap <buffer> <silent> gI <plug>(lcn-implementation)
+    nmap <buffer> <silent> ga <plug>(lcn-code-action)
+    nmap <buffer> <silent> gR <plug>(lcn-rename)
+    nmap <buffer> <silent> K <plug>(lcn-hover)
+  endif
+endfunction
+autocmd FileType * call LC_maps()
+
+" vim-test
+let test#strategy = "vimterminal"
+nnoremap <c-k>f :TestFile<cr>
+nnoremap <c-k>l :TestLast<cr>
+nnoremap <c-k>n :TestNearest<cr>
+nnoremap <c-k><c-k> :TestNearest<cr>
+nnoremap <c-k>s :TestSuite<cr>
+
+" vim-dadbod
+let g:dadbods = []
+
+command! DBSelect :call popup_menu(map(copy(g:dadbods), {k,v -> v.name}), #{callback: 'DBSelected'})
+
+func! DBSelected(id, result)
+  if a:result != -1
+    let b:db = g:dadbods[a:result-1].url
+    echomsg 'DB ' . g:dadbods[a:result-1].name . ' is selected.'
+  endif
+endfunc
+
+" pgsql
+let g:sql_type_default = 'pgsql'
+
+" Auto-pairs setup
+let g:AutoPairsShortcutBackInsert = ''
+
+" Commentary setup
+nnoremap <silent> <c-\> :Commentary<cr>j
+vnoremap <silent> <c-\> :Commentary<cr>j
+
+" FZF setup
+let g:fzf_layout = { 'window': 'botright 20split' }
+let g:fzf_colors = {
+    \ 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'],
+    \ }
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+  \   <bang>0)
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(
+  \ <q-args>,
+  \ <bang>0 ? fzf#vim#with_preview('up:60%')
+  \         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \ <bang>0)
+
+" vim-table-mode setup
+function! s:isAtStartOfLine(mapping)
+  let text_before_cursor = getline('.')[0 : col('.')-1]
+  let mapping_pattern = '\V' . escape(a:mapping, '\')
+  let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+  return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+endfunction
+
+inoreabbrev <expr> <bar><bar>
+  \ <SID>isAtStartOfLine('\|\|') ?
+  \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+inoreabbrev <expr> __
+  \ <SID>isAtStartOfLine('__') ?
+  \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+
+" netrw setup
+let g:netrw_localrmdir='rm -r'
+let g:netrw_banner=0
+
+" UI options
+set termguicolors
+colorscheme nord
+let g:nord_italic=1
+set laststatus=2  " always display the statusbar
+set ruler  " always show cursor position
+set wildmenu  " display command line's tab complete options as a menu
+set number  " show line numbers on the sidebar
+set relativenumber
+set noerrorbells
+set visualbell
+set mouse=a  " enable mouse for scrolling and resizing
+set title  " set the window's title, reflecting the file currently being edited
+
+" Folding
+set foldenable
+set foldlevelstart=10  " open most of the folds by default
+set foldnestmax=10  " folds can be nested, so max value will protect from too many folds
+set foldmethod=syntax  " type of folding
+
+" Swap, backup and undo
+set swapfile
+set directory=$HOME/.vim/swp//
+set nobackup
+set nowb
+set undofile
+set undodir=$HOME/.vim/undo/
+
+" Indentation options
+filetype plugin indent on  " smart auto indentation
+set tabstop=2  " show existing tab with 2 spaces width
+set softtabstop=2  " indent by 2 spaces when hitting tab
+set shiftwidth=2  " when indenting with > or autoindenting, use 2 spaces width
+set expandtab  " on pressing Tab, insert spaces
+set wrap  " wrap lines
+set autoindent
+set smartindent
+
+" Search options
+set incsearch  " find the next match as we type the search
+set hlsearch
+set ignorecase
+set smartcase
+
+" Text rendering options
+set encoding=utf-8
+set linebreak  " wrap lines at convenient points, avoid wrapping a line in the middle of a word
+set scrolloff=3  " the number of screen lines to keep above and below the cursor
+set sidescrolloff=5  " the number of screen columns to keep to the left and and right of the cursor
+syntax enable  " enable syntax highlighting
+
+" Miscellaneous options
+set nrformats-=octal  " interpret octal as decimal when incrementing nubers
+set exrc  " enable project specific vimrc
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+set completeopt-=preview
+
+" Mappings
+nnoremap n nzz
+nnoremap N Nzz
+
+nnoremap <silent> ,/ :nohlsearch<cr>
+
+nnoremap <c-b> <c-^>
+inoremap <c-b> <esc><c-^>
+
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap Qa qa
+
+let mapleader = "\'"
+nnoremap <leader>r :setlocal relativenumber!<cr>
+
+" project context (starts with <c-c>p)
+nnoremap <c-c>ps :Rg<cr>
+nnoremap <c-c>pf :Files<cr>
+vmap <c-c>ps y:Rg<cr><c-r>"
+vmap <c-c>pf y:Files<cr><c-r>"
+
+" current buffer context (starts with <c-c>c or <leader>)
+nnoremap <leader>f :Files %:h<cr>
+nnoremap <leader>e :e %:h<cr>
+nnoremap <silent> <leader>i :ALEFix<cr>
+" vim-dadbod
+xnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExeLine) db#op_exec() . '_'
+
+xmap <leader>db  <Plug>(DBExe)
+nmap <leader>db  <Plug>(DBExe)
+omap <leader>db  <Plug>(DBExe)
+nmap <leader>dbb <Plug>(DBExeLine)
+
+" without context (starts with <c-x> and other)
+nnoremap <c-x>b :Buffers<cr>
+
+inoremap <c-b> <left>
+inoremap <c-f> <right>
+inoremap <c-n> <down>
+inoremap <c-p> <up>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+" like Meta-<something>
+" inoremap <esc>b <c-left>
+" inoremap <esc>f <c-right>
+" inoremap <esc><BS> <c-w>
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+" like Meta-<something>
+" cnoremap <esc>b <c-left>
+" cnoremap <esc>f <c-right>
+" cnoremap <esc><BS> <c-w>
+
+" awkward commands fixes
+tnoremap <c-r> <c-w>"
+cnoremap W w
+cnoremap Vs vs
+cnoremap VS vs
+
+
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+
+call SourceIfExists("~/.vim/private.vim")
