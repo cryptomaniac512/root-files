@@ -129,6 +129,7 @@
     docker-compose
     gcc
     git
+    gitAndTools.gh
     protobuf
   ];
   programs = {
