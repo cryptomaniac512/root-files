@@ -12,8 +12,7 @@
   };
 
   hardware = {
-    # hardware specific
-    # cpu.intel.updateMicrocode = true;
+    cpu.amd.updateMicrocode = true;
     pulseaudio = {
       enable = true;
       extraModules = [ pkgs.pulseaudio-modules-bt ];
@@ -27,8 +26,8 @@
     networkmanager.enable = true;
 
     useDHCP = false;
-    interfaces.enp0s31f6.useDHCP = true;
-    interfaces.wlp2s0.useDHCP = true;
+    interfaces.enp2s0f0.useDHCP = true;
+    interfaces.wlp3s0.useDHCP = true;
   };
 
   time.timeZone = "Europe/Moscow";
@@ -48,9 +47,7 @@
       tapping = false;
     };
 
-    # hardware specific
-    # videoDrivers = [ "modesetting" ];
-    # useGlamor = true;
+    videoDrivers = [ "amdgpu" "modesetting" ];
 
     layout = "us,ru";
     xkbOptions = "grp:win_space_toggle,ctrl:swapcaps";
