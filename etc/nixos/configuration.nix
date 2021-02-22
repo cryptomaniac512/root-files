@@ -12,7 +12,8 @@
   };
 
   hardware = {
-    cpu.intel.updateMicrocode = true;
+    # hardware specific
+    # cpu.intel.updateMicrocode = true;
     pulseaudio = {
       enable = true;
       extraModules = [ pkgs.pulseaudio-modules-bt ];
@@ -47,8 +48,9 @@
       tapping = false;
     };
 
-    videoDrivers = [ "modesetting" ];
-    useGlamor = true;
+    # hardware specific
+    # videoDrivers = [ "modesetting" ];
+    # useGlamor = true;
 
     layout = "us,ru";
     xkbOptions = "grp:win_space_toggle,ctrl:swapcaps";
@@ -59,7 +61,6 @@
       defaultSession = "none+i3";
       sessionCommands = ''
         test -r $HOME/.Xresources && ${pkgs.xorg.xrdb}/bin/xrdb -merge $HOME/.Xresources
-        ## ${pkgs.xss-lock}/bin/xss-lock -- ${pkgs.lightdm}/bin/dm-tool lock &
       '';
 
       lightdm = {
@@ -94,7 +95,6 @@
   environment.systemPackages = with pkgs; [
     alacritty
     brightnessctl
-    dnsutils
     fzf
     psmisc
     ripgrep
@@ -105,32 +105,19 @@
     xfce.exo  # 'open terminal here'
 
     chromium
-    firefox
     flameshot
     pavucontrol
-    scrot
     slack
     tdesktop
     zoom-us
 
-    cargo
-    clippy
-    rust-analyzer
-    rustc
-    rustfmt
-
     python38
     python38Packages.ipython
-    python38Packages.python-language-server
-    python38Packages.virtualenv
 
-    binutils
     direnv
     docker-compose
-    gcc
     git
     gitAndTools.gh
-    protobuf
   ];
   programs = {
     seahorse.enable = true;
@@ -145,9 +132,6 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
-      shellInit = ''
-        export PATH="$HOME/.local/bin:$PATH"
-      '';
       setOptions = [
         "HIST_IGNORE_ALL_DUPS"
         "SHARE_HISTORY"
@@ -191,27 +175,12 @@
     packages = [ pkgs.dunst ];
   };
  
-  environment.pathsToLink = [ "/libexec" ];
   environment.variables = {
     EDITOR = "vim";
     TERMINAL = "alacritty";
-
-    LD_LIBRARY_PATH = with pkgs; lib.makeLibraryPath [ stdenv.cc.cc.lib openssl zlib ];
-    # Python uses commands like "gcc -Wl,-t -lcrypto" (followed by objdump) to discover libraries.
-    # gcc uses this var to extend its library search paths
-    NIX_LDFLAGS_x86_64_unknown_linux_gnu = [ "-L${pkgs.openssl.out}/lib" ];
   };
   environment.interactiveShellInit = ''
     test -r $HOME/.dir_colors &&  eval `${pkgs.coreutils}/bin/dircolors $HOME/.dir_colors`
-  '';
-  system.activationScripts.ld-linux =  ''
-    mkdir -p /lib64
-
-    # Let non-NixOS binaries run without patchelf --set-interpreter
-    ln -sf ${pkgs.glibc}/lib/ld-linux-x86-64.so.2 /lib64
-
-    # Provide #!/usr/bin/perl
-    ln -sf ${pkgs.perl}/bin/perl /usr/bin
   '';
 
   users = {
