@@ -27,10 +27,6 @@
   networking = {
     hostName = "sl0";
     networkmanager.enable = true;
-
-    useDHCP = false;
-    interfaces.enp2s0f0.useDHCP = true;
-    interfaces.wlp3s0.useDHCP = true;
   };
 
   time.timeZone = "Europe/Moscow";
