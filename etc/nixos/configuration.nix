@@ -168,6 +168,7 @@
       ];
     };
     lorri.enable = true;
+    fwupd.enable = true;
   };
 
   systemd = {
