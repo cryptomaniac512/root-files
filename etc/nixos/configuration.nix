@@ -12,6 +12,7 @@
       efi.canTouchEfiVariables = true;
     };
     tmpOnTmpfs = true;
+    supportedFilesystems = [ "ntfs" ];
   };
 
   hardware = {
