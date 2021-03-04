@@ -113,8 +113,8 @@
 
     direnv
     docker-compose
-    git
     gitAndTools.gh
+    gitAndTools.gitFull
   ];
   programs = {
     seahorse.enable = true;
