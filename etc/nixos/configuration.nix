@@ -90,30 +90,28 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    alacritty
+    direnv
+    docker-compose
     fzf
+    gitAndTools.gh
+    gitAndTools.gitFull
     psmisc
+    python38
+    python38Packages.ipython
     ripgrep
     vim_configurable
-    xfce.thunar
-    xfce.xfconf  # needed to save settings
-    xfce.tumbler  # thumbnails
-    xfce.exo  # 'open terminal here'
 
-    google-chrome
+    alacritty
     flameshot
+    google-chrome
     pavucontrol
     slack
     tdesktop
+    xfce.exo  # 'open terminal here'
+    xfce.thunar
+    xfce.tumbler  # thumbnails
+    xfce.xfconf  # needed to save settings
     zoom-us
-
-    python38
-    python38Packages.ipython
-
-    direnv
-    docker-compose
-    gitAndTools.gh
-    gitAndTools.gitFull
   ];
   programs = {
     seahorse.enable = true;
