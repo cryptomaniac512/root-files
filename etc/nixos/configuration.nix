@@ -101,7 +101,7 @@
     xfce.tumbler  # thumbnails
     xfce.exo  # 'open terminal here'
 
-    chromium
+    google-chrome
     flameshot
     pavucontrol
     slack
